@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export PORT=4567
+java -jar target/helloworld-1.0-SNAPSHOT-jar-with-dependencies.jar

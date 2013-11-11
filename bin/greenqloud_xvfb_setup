@@ -1,0 +1,20 @@
+#!/bin/bash
+
+## Use this script to prepare GreenQloud Untuntu 12.04 server to run Selenium tests in Xvfb
+
+# Get Xvfb and Firefox
+sudo apt-get install -y xvfb firefox
+
+# Install Xvfb packages
+sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
+
+# Add chrome repo and install chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*; sudo apt-get -f install
+rm google-chrome-stable*
+
+# Get chromedriver
+wget http://chromedriver.storage.googleapis.com/2.6/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+rm chromedriver_linux64.zip
+
