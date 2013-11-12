@@ -10,7 +10,7 @@
   <dependencies>
     <dependency>
       <groupId>com.sparkjava</groupId>
-      <artifact>spark-core</artifact>
+      <artifactId>spark-core</artifactId>
       <version>1.1.1</version>
     </dependency>
     <dependency>
