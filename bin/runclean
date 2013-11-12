@@ -1,0 +1,6 @@
+#!/bin/bash
+
+bin/clean
+bin/package
+bin/deploy
+
