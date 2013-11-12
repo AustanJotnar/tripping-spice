@@ -1,0 +1,4 @@
+#!/bin/bash
+mkdir target/tmp
+cp target/TicTacToe-1.0-SNAPSHOT.jar target/tmp
+java -cp target/tmp/TicTacToe-1.0-SNAPSHOT.jar is.ru.TicTacToe.TicTacToe
