@@ -2,7 +2,7 @@ package is.ru.TicTacToe;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class TicTest 
+public class TicTacToeTest 
 {
     @Test
     public void testTicTacToe() 
