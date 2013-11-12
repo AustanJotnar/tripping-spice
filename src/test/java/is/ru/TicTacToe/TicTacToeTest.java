@@ -5,7 +5,7 @@ import org.junit.Test;
 public class TicTest 
 {
     @Test
-    public void greetResultsInHello() 
+    public void testTicTacToe() 
     {
         assertEquals("TicTacToe", "TicTacToe");
     }
