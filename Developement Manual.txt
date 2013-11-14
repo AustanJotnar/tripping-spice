@@ -1,4 +1,8 @@
+--Development Manual--
 
+Follow these steps to set up our source control and build environment
+
+1. Git setup
 # If you don't hava a account on github, make an account on https://github.com/
 
 # Install git:
@@ -16,8 +20,9 @@ git clone git@github.com:AustanJotnar/tripping-spice.git
 # Navigate to git folder
 cd tripping-spice
 
+2. Java and Maven
 # To setup Java run: 
-bin/dev_setup
+bin/java_setup
 
 # Install maven
 sudo apt-get install maven
