@@ -9,14 +9,17 @@ sudo mkdir -p /usr/lib/jvm/jdk1.0.7/
 # Navigate to where you want to download the file
 i.e. cd ~
 
+# Make download folder
+mkdir ~/download
+
 # Download java
-wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com" "http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz"
+wget -P~/download/ --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com" "http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz"
 
 # Unpack tar file
-tar -xvf jdk-7u45-linux-x64.tar.gz
+tar -xvf ~/download/jdk-7u45-linux-x64.tar.gz
 
 # Move files
-sudo mv jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
+sudo mv ~/download/jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
 
 # Remove empty folder
 rm -rf jdk1.7.0_45
