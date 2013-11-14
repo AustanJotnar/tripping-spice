@@ -1,14 +1,10 @@
-#!/bin/bash
+#/bin/bash
 
 # Make sure we get a fresh install of java1.7
 sudo apt-get purge openjdk-\*
 
-# Directory to hold your Oracle Java JDK and JRE binaries.
-sudo mkdir -p /usr/lib/jvm/jdk1.0.7/
-
-
 # Make download folder
-mkdir ~/download
+mkdir -v ~/download
 
 # Navigate to download folder
 cd ~/download
@@ -19,11 +15,18 @@ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2F
 # Unpack tar file
 tar -xvf jdk-7u45-linux-x64.tar.gz
 
-# Move files
-sudo mv jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
+# Install maven
+sudo apt-get install maven
 
-# Remove empty folder
+# Directory to hold your Oracle Java JDK and JRE binaries.
+sudo mkdir -pv /usr/lib/jvm/jdk1.7.0
+
+# Move files
+sudo mv -fv jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
+
+# Remove unnessasary file and folder
 rm -rf jdk1.7.0_45
+rm -rf jdk-7u45-linux-x64.tar.gz
 
 # Setup java
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0/bin/java" 1
@@ -32,6 +35,3 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7
 
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0/bin/javaws" 1
 
-
-# Download and install maven
-sudo apt-get install maven
