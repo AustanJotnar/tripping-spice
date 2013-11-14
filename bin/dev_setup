@@ -15,8 +15,6 @@ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2F
 # Unpack tar file
 tar -xvf jdk-7u45-linux-x64.tar.gz
 
-# Install maven
-sudo apt-get install maven
 
 # Directory to hold your Oracle Java JDK and JRE binaries.
 sudo mkdir -pv /usr/lib/jvm/jdk1.7.0
@@ -35,3 +33,5 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7
 
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0/bin/javaws" 1
 
+# Install maven
+sudo apt-get install maven
