@@ -16,8 +16,11 @@ git clone git@github.com:AustanJotnar/tripping-spice.git
 # Navigate to git folder
 cd tripping-spice
 
-# To setup correct version of Java and Maven run: 
+# To setup Java run: 
 bin/dev_setup
+
+# Install maven
+sudo apt-get install maven
 
 # Run: 
 java -version

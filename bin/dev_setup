@@ -1,5 +1,7 @@
 #/bin/bash
 
+sudo apt-get update
+
 # Make sure we get a fresh install of java1.7
 sudo apt-get purge openjdk-\*
 
@@ -33,5 +35,3 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7
 
 sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0/bin/javaws" 1
 
-# Install maven
-sudo apt-get install maven
