@@ -1,0 +1,58 @@
+
+# If you don't hava a account on github, make an account on https://github.com/
+
+# Install git:
+sudo apt-get install git
+
+# Follow instructions for setup:
+http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
+
+# Follow instructions to generate SSH keys and set up ssh connection:
+https://help.github.com/articles/generating-ssh-keys#platform-linux
+
+# Clone github repository:
+git clone git@github.com:AustanJotnar/tripping-spice.git
+
+## To setup correct version of Java and Maven: 
+# Make sure we get a fresh install of java1.7
+sudo apt-get purge openjdk-\*
+
+# Directory to hold your Oracle Java JDK and JRE binaries.
+sudo mkdir -p /usr/lib/jvm/jdk1.0.7/
+
+# Navigate to where you want to download the file
+i.e. cd ~
+
+# Download java
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com" "http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz"
+
+# Unpack tar file
+tar -xvf jdk-7u45-linux-x64.tar.gz
+
+# Move files
+sudo mv jdk1.7.0_45/* /usr/lib/jvm/jdk1.7.0/
+
+# Remove empty folder
+rm -rf jdk1.7.0_45
+
+# Setup java
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0/bin/java" 1
+
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7.0/bin/javac" 1
+
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0/bin/javaws" 1
+
+
+# Download and install maven
+sudo apt-get install maven
+
+# Run: 
+java -version
+
+# If java version is not "1.7.0_xx"
+# Then run:
+sudo update-alternatives --config java
+# Select option for java 1.7
+
+# If you encounter any problems with Maven (such as JAVA_HOME not set or simmilar) see Maven install instructions.
+http://maven.apache.org/download.cgi
