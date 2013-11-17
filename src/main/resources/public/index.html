@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Hello world</title>
+    <meta name="AustanJotnar.is" content="Play TicTacToe" />
+    <title>TicTacToe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- load bootstrap for nicer ui -->
@@ -10,18 +11,25 @@
   </head>
   <body>
 
-
+    <div class="container">
       <h1>Master of all TicTacToes!</h1>
-
-	    <p>Hoooowwwdddyyy ho</p>
-      <p>Running spark !</p>
-      <div id="test">
+      
       <form method="post" action="/add" class="form-inline" role="form"> 
-        <button type"submit" class="btn btn-default">Test</button>
+        <div class="form-group">
+          <input type="text" class="form-control" name="player0" id="player0"
+          placeholder="Player X">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="player1" id="player1"
+          placeholder="Player O">
+        </div>
+        <button type"submit" class="btn btn-default">Start Playing</button>
       </form>
 
+      <div id="test">
       </div>
 
+    </div>
     <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
     </script>
@@ -30,9 +38,12 @@
     $(document).ready(function(){
       var form = $('form');
       form.submit(function(e){
+        var player0 = $("#player0").val();
+        var player1 = $("#player1").val();
         $.ajax({
           type: form.attr('method'),
-          url: form.attr('action')
+          url: form.attr('action'),
+          data: 'player0=' + player0 + '&player1=' + player1
         }).done(function(result){
           $('#test').html(result).attr('class', 'alert alert-success');
         }).fail(function(){
