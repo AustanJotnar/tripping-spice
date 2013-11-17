@@ -1,9 +1,5 @@
 package is.ru.tictactoe;
 
-import static spark.Spark.*;
-import spark.*;
-
-
 public class TicTacToe 
 {
     private int activePlayer;
@@ -52,14 +48,6 @@ public class TicTacToe
     {
 
 		TicTacToe game = new TicTacToe();    
-
-		staticFileLocation("/public");
-		post(new Route("/add") {
-	             @Override
-	             public Object handle(Request request, Response response) {
-	                 return "Hhhoooowwwdyhowww";
-	             }
-	         });
 		
 	    System.out.println("TicTacToe");  
     }
