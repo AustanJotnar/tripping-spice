@@ -39,21 +39,14 @@ public class GameBoard
 
     public boolean emptyCell(int c)
     {
-    	if(c >=0 && c < 9)
+    	if(c >= 0 && c < 9 && this.board[c] == 'f')
     	{
-    		if(this.board[c] == 'f')
-    		{
-    			return true;
-    		}
-    		else
-    		{
-    			return false;
-    		}
-    	}
-    	else
-    	{
-    		return false;
-    	}
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
 }
