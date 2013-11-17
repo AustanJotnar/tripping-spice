@@ -4,10 +4,12 @@ import org.junit.Test;
 
 public class TicTacToeTest 
 {
+    TicTacToe game = new TicTacToe();	
+
     @Test
     public void testTicTacToe() 
     {
-        assertEquals("TicTacToe", "TicTacToe");
+        assertEquals(0, game.getPlayer(0));
     }
 }
 
