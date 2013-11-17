@@ -4,4 +4,4 @@ then
 	mkdir target/tmp;
 fi
 cp target/TicTacToe-1.0-SNAPSHOT.jar target/tmp
-java -cp target/tmp/TicTacToe-1.0-SNAPSHOT.jar is.ru.TicTacToe.TicTacToe
+java -cp target/tmp/TicTacToe-1.0-SNAPSHOT.jar is.ru.tictactoe.TicTacToe
