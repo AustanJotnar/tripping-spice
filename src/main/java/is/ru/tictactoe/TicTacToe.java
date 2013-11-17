@@ -20,16 +20,34 @@ public class TicTacToe
     {
     	if(player == 0)
     	{
-    		return player1;
+    		return this.player1;
     	}
     	else
     	{
-    		return player2;
+    		return this.player2;
+    	}
+    }
+
+    public int getActivePlayer()
+    {
+    	return this.activePlayer;
+    }
+
+    public void switchPlayer()
+    {
+    	if(this.activePlayer == 0)
+    	{
+    		this.activePlayer = 1;
+    	}
+    	else
+    	{
+    		this.activePlayer = 0;
     	}
     }
 
     public static void main(String[] args) 
     {
+		TicTacToe game = new TicTacToe();    
 	    System.out.println("TicTacToe");  
     }
 }

@@ -11,5 +11,12 @@ public class TicTacToeTest
     {
         assertEquals(0, game.getPlayer(0));
     }
+
+    @Test
+    public void testSwitchPlayer()
+    {
+    	game.switchPlayer();
+    	assertEquals(1, game.getActivePlayer());
+    }
 }
 
