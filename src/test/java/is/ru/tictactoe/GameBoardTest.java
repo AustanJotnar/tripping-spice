@@ -13,21 +13,26 @@ public class GameBoardTest
         {
         	test[i] = 'f';
         }
-        assertArrayEquals(gb.getBoard(), test);
+        assertArrayEquals(test, gb.getBoard());
     }
 
     @Test
     public void testGameBoardSize() 
     {
-        assertEquals(gb.getBoard().length, 9);
+        assertEquals(9, gb.getBoard().length);
     }
     
+    @Test
+    public void testGameBoardEmptyCell() 
+    {
+        assertEquals(true, gb.emptyCell(8));
+    }
+
     @Test
     public void testGameBoardAddToBoardXon0() 
     {
         gb.addToBoard('X', 0);
-        assertEquals(gb.getBoard()[0], 'X');
+        assertEquals('X', gb.getBoard()[0]);
     }
-
 }
 
