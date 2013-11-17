@@ -8,8 +8,8 @@ public class Player
 
 	public Player(int playerId, String playerName)
 	{
-		id = playerId;
-		name = playerName;
+		this.id = playerId;
+		this.name = playerName;
 	}
 
 	public String getName()

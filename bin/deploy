@@ -4,4 +4,4 @@ then
         mkdir target/tmp;
 fi
 cp target/tictactoe-1.0-SNAPSHOT-jar-with-dependencies.jar target/tmp
-java -cp target/tmp/tictactoe-1.0-SNAPSHOT-jar-with-dependencies.jar is.ru.tictactoe.TicTacToe
+java -cp target/tmp/tictactoe-1.0-SNAPSHOT-jar-with-dependencies.jar is.ru.tictactoe.PlayGame

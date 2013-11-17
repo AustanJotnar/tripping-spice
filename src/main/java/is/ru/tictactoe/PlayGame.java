@@ -23,6 +23,14 @@ public class PlayGame{
 //
 //		});
 		
+	staticFileLocation("/public");
+	post(new Route("/add") {
+             @Override
+             public Object handle(Request request, Response response) {
+                 return "Hhhoooowwwdyhowww";
+             }
+         });
+
 		System.out.println("PlayGame"); 
 
 
