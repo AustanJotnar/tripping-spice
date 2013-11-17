@@ -15,7 +15,7 @@ public class PlayerTest
     public void testPlayerId()
     {
     	Player player = new Player(1, "Jon");
-    	
+    	assertEquals(1, player.getId());
     }
 }
 
