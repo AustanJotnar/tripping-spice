@@ -15,13 +15,18 @@ public class GameBoard
     	return this.board;
     }
     
-    public void addToBoard(char token, int pos)
+    public int addToBoard(char token, int pos)
     {
     	if( (token == 'X' || token == 'O') 
-    		&& this.board[pos] == 'f' && pos >= 0 && pos < 9)
+            && pos >= 0 && pos < 9 && this.board[pos] == 'f')
     	{
     		this.board[pos] = token;
+            return pos;
     	}
+        else
+        {
+            return -1;
+        }
     }
     
     public void resetBoard()
@@ -49,5 +54,7 @@ public class GameBoard
     	{
     		return false;
     	}
-    }  
+    }
+
+
 }
