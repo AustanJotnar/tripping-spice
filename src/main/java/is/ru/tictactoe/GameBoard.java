@@ -3,8 +3,10 @@ package is.ru.tictactoe;
 
 public class GameBoard 
 {
-    public static void main(String[] args) 
+    private char[] board;
+    public GameBoard()
     {
-		System.out.println("GameBoard");
-	}
+    	board = new char[9];
+    }
+    
 }
