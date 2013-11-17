@@ -67,15 +67,18 @@
       form.submit(function(e){
         var player0 = $("#player0").val();
         var player1 = $("#player1").val();
-        $.ajax({
-          type: form.attr('method'),
-          url: form.attr('action'),
-          data: 'player0=' + player0 + '&player1=' + player1
-        }).done(function(result){
-          $('#test').html(result).attr('class', 'alert alert-success');
-        }).fail(function(){
-          $('#test').html('Villa kom upp').attr('class', 'alert alert-danger');
-        });
+        if(player0 != "" && player1 != "")
+        {
+          $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: 'player0=' + player0 + '&player1=' + player1
+          }).done(function(result){
+            $('#test').html(result).attr('class', 'alert alert-success');
+          }).fail(function(){
+            $('#test').html('Villa kom upp').attr('class', 'alert alert-danger');
+          });
+        }
         e.preventDefault();
       });
     });
