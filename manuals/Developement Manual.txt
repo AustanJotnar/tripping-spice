@@ -1,0 +1,41 @@
+--Development Manual--
+
+Follow these steps to set up our source control and build environment
+
+NODE that it is advised to use linux as the OS in the development. Using other OS's is at your own risk.
+
+1. Git setup
+# If you don't have a account on github, make an account on https://github.com/
+
+# Install git:
+sudo apt-get install git
+
+# Follow instructions for setup:
+http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
+
+# Follow instructions to generate SSH keys and set up ssh connection:
+https://help.github.com/articles/generating-ssh-keys#platform-linux
+
+# Clone github repository:
+git clone git@github.com:AustanJotnar/tripping-spice.git
+
+# Navigate to git folder
+cd tripping-spice
+
+2. Java and Maven
+# To setup Java run: 
+bin/java_setup
+
+# Install maven
+sudo apt-get install maven
+
+# Run: 
+java -version
+
+# If java version is not "1.7.0_xx"
+# Then run:
+sudo update-alternatives --config java
+# Select option for java 1.7
+
+# If you encounter any problems with Maven (such as JAVA_HOME not set or similar) see Maven install instructions.
+http://maven.apache.org/download.cgi
