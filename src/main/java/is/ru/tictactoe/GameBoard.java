@@ -55,9 +55,5 @@ public class GameBoard
     		return false;
     	}
     }
-    public int checkForWinner(int c)
-    {
-       return 0;
-    }
-
+    
 }

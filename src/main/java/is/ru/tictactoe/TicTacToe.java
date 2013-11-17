@@ -12,7 +12,7 @@ public class TicTacToe
     	this.activePlayer = p1;
     	this.player1 = p1;
     	this.player2 = p2;
-    	GameBoard gameBoard = new GameBoard();
+    	this.gameBoard = new GameBoard();
     }
     
     public Player getPlayer(int player) 
@@ -52,6 +52,57 @@ public class TicTacToe
 		TicTacToe game = new TicTacToe(p1, p2);    
 		
 	    System.out.println("TicTacToe");  
+    }
+    
+    //Returns 0 for not finished
+    //Returns 1 for Player 1 has won
+    //Returns 2 for Player 2 has won
+    //Returns 3 for draw
+    public int checkForWinner()
+    {
+        boolean draw = true;
+        for(int i = 0; i < 9; i++)
+        {
+            if (this.gameBoard.getBoard()[0] != 'X' && this.gameBoard.getBoard()[0] != 'O')
+            {
+                draw = false;
+            }
+        }
+
+        if(draw)
+        {
+            return 3;
+        }
+
+        else if (((this.gameBoard.getBoard()[0] == 'X' && this.gameBoard.getBoard()[1] == 'X' && this.gameBoard.getBoard()[2] == 'X') ||
+                  (this.gameBoard.getBoard()[3] == 'X' && this.gameBoard.getBoard()[4] == 'X' && this.gameBoard.getBoard()[5] == 'X') ||
+                  (this.gameBoard.getBoard()[6] == 'X' && this.gameBoard.getBoard()[7] == 'X' && this.gameBoard.getBoard()[8] == 'X') ||
+                  (this.gameBoard.getBoard()[0] == 'X' && this.gameBoard.getBoard()[3] == 'X' && this.gameBoard.getBoard()[6] == 'X') ||
+                  (this.gameBoard.getBoard()[1] == 'X' && this.gameBoard.getBoard()[4] == 'X' && this.gameBoard.getBoard()[7] == 'X') ||
+                  (this.gameBoard.getBoard()[2] == 'X' && this.gameBoard.getBoard()[5] == 'X' && this.gameBoard.getBoard()[8] == 'X') ||
+                  (this.gameBoard.getBoard()[0] == 'X' && this.gameBoard.getBoard()[4] == 'X' && this.gameBoard.getBoard()[8] == 'X') ||
+                  (this.gameBoard.getBoard()[2] == 'X' && this.gameBoard.getBoard()[4] == 'X' && this.gameBoard.getBoard()[6] == 'X')) &&
+                  activePlayer == player1)
+        {
+            return 1;
+        }
+
+        else if (((this.gameBoard.getBoard()[0] == 'O' && this.gameBoard.getBoard()[1] == 'O' && this.gameBoard.getBoard()[2] == 'O') ||
+                  (this.gameBoard.getBoard()[3] == 'O' && this.gameBoard.getBoard()[4] == 'O' && this.gameBoard.getBoard()[5] == 'O') ||
+                  (this.gameBoard.getBoard()[6] == 'O' && this.gameBoard.getBoard()[7] == 'O' && this.gameBoard.getBoard()[8] == 'O') ||
+                  (this.gameBoard.getBoard()[0] == 'O' && this.gameBoard.getBoard()[3] == 'O' && this.gameBoard.getBoard()[6] == 'O') ||
+                  (this.gameBoard.getBoard()[1] == 'O' && this.gameBoard.getBoard()[4] == 'O' && this.gameBoard.getBoard()[7] == 'O') ||
+                  (this.gameBoard.getBoard()[2] == 'O' && this.gameBoard.getBoard()[5] == 'O' && this.gameBoard.getBoard()[8] == 'O') ||
+                  (this.gameBoard.getBoard()[0] == 'O' && this.gameBoard.getBoard()[4] == 'O' && this.gameBoard.getBoard()[8] == 'O') ||
+                  (this.gameBoard.getBoard()[2] == 'O' && this.gameBoard.getBoard()[4] == 'O' && this.gameBoard.getBoard()[6] == 'O')) &&
+                  activePlayer == player2)
+        {
+            return 2;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }
 

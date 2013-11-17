@@ -20,5 +20,11 @@ public class TicTacToeTest
     	game.switchPlayer();
     	assertEquals(1, game.getActivePlayer().getId());
     }
+    @Test
+    public void testCheckForWinner()
+    {
+        int test = game.checkForWinner();
+        assertEquals(0, test);
+    }
 }
 
