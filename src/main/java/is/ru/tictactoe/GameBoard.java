@@ -5,6 +5,6 @@ public class GameBoard
 {
     public static void main(String[] args) 
     {
-		System.out.println("GameBoard")
+		System.out.println("GameBoard");
 	}
 }
