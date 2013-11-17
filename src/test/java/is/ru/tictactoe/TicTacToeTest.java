@@ -4,19 +4,21 @@ import org.junit.Test;
 
 public class TicTacToeTest 
 {
-    TicTacToe game = new TicTacToe();	
+    Player p1 = new Player(0, "Alice");
+    Player p2 = new Player(1, "Bob");
+    TicTacToe game = new TicTacToe(p1, p2);  
 
     @Test
     public void testTicTacToe() 
     {
-        assertEquals(0, game.getPlayer(0));
+        assertEquals(0, game.getPlayer(0).getId());
     }
 
     @Test
     public void testSwitchPlayer()
     {
     	game.switchPlayer();
-    	assertEquals(1, game.getActivePlayer());
+    	assertEquals(1, game.getActivePlayer().getId());
     }
 }
 
