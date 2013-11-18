@@ -14,15 +14,15 @@ public class PlayGame
     		game.gameBoard.addToBoard(token, pos);
             if(game.checkForWinner() == 1 || game.checkForWinner() == 2 )
             {
-            	return Integer.toString(position) + token + game.getActivePlayer().getName() + " won!";
+            	return "F" + Integer.toString(position) + token + game.getActivePlayer().getName() + " won!";
             }
             else if(game.checkForWinner() == 3) 
         	{
-            	return Integer.toString(position) + token + "It's a draw!";
+            	return "F" + Integer.toString(position) + token + "It's a draw!";
         	}
             game.switchPlayer();
 		}
-		return Integer.toString(position) + token + game.getActivePlayer().getName() + "'s move";
+		return "P" + Integer.toString(position) + token + game.getActivePlayer().getName() + "'s move";
     }
         
 	public static void main(String[] args)
@@ -46,6 +46,7 @@ public class PlayGame
 		{
              @Override
              public Object handle(Request request, Response response) {
+                
                 String name0 = (String.valueOf(request.queryParams("player0")));
 				String name1 = (String.valueOf(request.queryParams("player1")));
 				

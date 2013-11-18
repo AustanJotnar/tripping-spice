@@ -99,11 +99,17 @@ Design
 		Developement Tools
 
 	Servers
-		WebServer
 		Integration Server
-		Staging Server
-		Production Server
+			Automatic integration
+				Travis
+			Manual Integration
+				46.149.29.104
 
+		Staging Server
+			https://ajtictac.herokuapp.com
+		
+		Production Server
+			
 	Testing
 		Unit Test
 		Selenium Test
