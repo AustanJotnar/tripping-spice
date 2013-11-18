@@ -17,6 +17,19 @@ $(document).ready(function(){
     }
     e.preventDefault();
   });
+
+
+$("#tictactoe tr td").click(function(){
+  $.ajax({
+    type: "POST",
+    url: "/click",
+    data: 'cell=' + (this.id)
+  }).done(function(result){
+    $('#test').html(result).attr('class', 'alert alert-success');
+  }).fail(function(){
+    $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
 });
 
+});
+});
     

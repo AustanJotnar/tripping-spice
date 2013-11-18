@@ -71,6 +71,17 @@ public class PlayGame
 				}					
              }
          });
+
+		post(new Route("/click") 
+		{
+             @Override
+             public Object handle(Request request, Response response) {
+                String cell = (String.valueOf(request.queryParams("cell")));
+
+                return cell;
+             }
+		});
+
 		System.out.println("PlayGame"); 
 	}
 
