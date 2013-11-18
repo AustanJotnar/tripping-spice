@@ -17,5 +17,10 @@ public class PlayerTest
     {
     	assertEquals(1, player.getId());
     }
+    @Test
+    public void testPlayerToken()
+    {
+        assertEquals('O', player.getToken());
+    }
 }
 
