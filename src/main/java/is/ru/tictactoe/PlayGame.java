@@ -5,7 +5,6 @@ import spark.*;
 
 public class PlayGame
 {
-<<<<<<< HEAD
     public static String play(TicTacToe game, int position)
     {
         int pos = position;
@@ -19,43 +18,13 @@ public class PlayGame
             }
             else if(game.checkForWinner() == 3) 
         	{
-            	return Integer.toString(position) + token + "It's a draw!";
+            	return Integer.toString(positiongit ) + token + "It's a draw!";
         	}
             game.switchPlayer();
 		}
 		return Integer.toString(position) + token + game.getActivePlayer().getName() + "'s move";
     }
-=======
-        public static String play(TicTacToe game, int position)
-        {
-            int pos = position;
-            if(game.checkForWinner() == 0)
-    		{    
-               //TODO print into HTML
-               System.out.println("Player " + game.getActivePlayer().getToken() + ". Make a move!");
         
-        		//TODO JavaScript get move from HTML and mark cell with game.activePlayer.getToken()
-
-        		char token = game.getActivePlayer().getToken();
-        		game.gameBoard.addToBoard(token, pos);
-                game.switchPlayer();
-
-                return Integer.toString(position) + token + game.getActivePlayer().getName() + "'s move";
-       
-    		}
-    		//TODO print Nicely into HTML
-	        else if(game.checkForWinner() == 3) 
-	        {
-	                System.out.println("The game was draw!");
-	                return "9DIt's a draw!";
-	        }
-	        else
-	        {
-	                System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
-	                return "9W" + game.getActivePlayer().getName() + " won!";
-	        }
-        }
->>>>>>> b5cec43f320cc228fb90ef3f9fefd8d12ff9d427
 	public static void main(String[] args)
 	{
 		
