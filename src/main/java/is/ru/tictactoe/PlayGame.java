@@ -88,9 +88,8 @@ public class PlayGame
 
                 if(game.getActivePlayer() != null)
                 {
-                	play(game, number);
-
-                	return number;
+                	return play(game, number);
+                	 
                 }
                 return "Add players to game"; 	
 			}
