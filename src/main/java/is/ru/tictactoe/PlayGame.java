@@ -5,38 +5,35 @@ import spark.*;
 
 public class PlayGame
 {
-	public static void play(TicTacToe game, int position)
-	{
-		int pos = position;
-		if(game.checkForWinner() == 0)
-        {    
-        	//TODO####
-        	// FIX GAME LOGIC
-        	// NEED TO CHECK FOR WINNER AFTER MAKIN EACH MOVE
-
-
-           	//TODO print into HTML
-           	System.out.println("Player " + game.getActivePlayer().getToken() + ". Make a move!");
+        public static String play(TicTacToe game, int position)
+        {
+                int pos = position;
+                if(game.checkForWinner() == 0)
+        		{    
+                   //TODO print into HTML
+                   System.out.println("Player " + game.getActivePlayer().getToken() + ". Make a move!");
             
-            //TODO JavaScript get move from HTML and mark cell with game.activePlayer.getToken()
+            		//TODO JavaScript get move from HTML and mark cell with game.activePlayer.getToken()
 
-            game.gameBoard.addToBoard(game.getActivePlayer().getToken(), pos);
-            
-            if(game.checkForWinner() == 0)
-            {
-            	game.switchPlayer();
-            }
-        }
+            		char token = game.getActivePlayer().getToken();
+            		game.gameBoard.addToBoard(token, pos);
+                    game.switchPlayer();
+
+                    return Integer.toString(position) + token + game.getActivePlayer().getName() + "'s move";
+           
+        		}
         //TODO print Nicely into HTML
-        if(game.checkForWinner() == 3) 
-        {
-        	System.out.println("The game was draw!");
+	        else if(game.checkForWinner() == 3) 
+	        {
+	                System.out.println("The game was draw!");
+	                return "9DIt's a draw!";
+	        }
+	        else
+	        {
+	                System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
+	                return "9W" + game.getActivePlayer().getName() + " won!";
+	        }
         }
-        else
-        {
-        	System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
-        }
-	}
 	public static void main(String[] args)
 	{
 
