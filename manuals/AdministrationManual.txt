@@ -1,1 +1,11 @@
-#TO DO write this doc
+make user with sudo rights
+install git
+install mvn
+clone/fork rep
+
+Heroku setup heroku.com
+Heroku toolbelt
+Install ruby1.9.1-dev and update make
+sudo apt-get install -y make ruby1.9.1-dev
+3. Use gem1.9.1 to install travis
+sudo gem1.9.1 install travis
