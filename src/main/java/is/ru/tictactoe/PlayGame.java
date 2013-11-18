@@ -23,7 +23,14 @@ public class PlayGame
             }
         }
         //TODO print Nicely into HTML
-        System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
+        if(game.checkForWinner() == 3) 
+        {
+        	System.out.println("The game was draw!");
+        }
+        else
+        {
+        	System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
+        }
 	}
 	public static void main(String[] args)
 	{
