@@ -22,7 +22,7 @@ public class PlayGame
             	game.switchPlayer();
             }
         }
-        //TODO print into HTML
+        //TODO print Nicely into HTML
         System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
 	}
 	public static void main(String[] args)
