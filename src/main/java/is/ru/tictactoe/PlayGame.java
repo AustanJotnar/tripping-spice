@@ -5,10 +5,10 @@ import spark.*;
 
 public class PlayGame
 {
-	public void play(TicTacToe game)
+	public static void play(TicTacToe game, int position)
 	{
-		int pos = 0;
-		while(game.checkForWinner() == 0)
+		int pos = position;
+		if(game.checkForWinner() == 0)
         {    
            	//TODO print into HTML
            	System.out.println("Player " + game.getActivePlayer().getToken() + ". Make a move!");
@@ -34,6 +34,7 @@ public class PlayGame
 	}
 	public static void main(String[] args)
 	{
+
 		staticFileLocation("/public");
 		if(System.getenv("PORT") == null)
 		{
@@ -44,6 +45,9 @@ public class PlayGame
 			setPort(Integer.valueOf(System.getenv("PORT")));
 		}
 		
+		final Player player0 = new Player(0);
+		final Player player1 = new Player(1);
+
 		post(new Route("/add") 
 		{
              @Override
@@ -65,24 +69,28 @@ public class PlayGame
 				}
 				else
 				{
-					Player player0 = new Player(0, name0);
-					Player player1 = new Player(1, name1);
+					player0.setName(name0);
+					player1.setName(name1);
 					return name0 + " " + name1;	
 				}					
              }
          });
 
+		final TicTacToe game = new TicTacToe(player0, player1);
 		post(new Route("/click") 
 		{
              @Override
              public Object handle(Request request, Response response) {
                 String cell = (String.valueOf(request.queryParams("cell")));
+                
+                int number = (Integer.valueOf(cell.replaceFirst(".*?(\\d+).*","$1")));
 
-                return cell;
-             }
+                
+                play(game, number);
+
+                return number;
+			}
 		});
 
-		System.out.println("PlayGame"); 
 	}
-
 }

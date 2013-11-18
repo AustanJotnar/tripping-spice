@@ -7,11 +7,22 @@ public class Player
 	private String name;
 	private char token;
 
+	public Player(int playerId)
+	{
+		this.id = playerId;
+		this.setToken(playerId);
+	}
 	public Player(int playerId, String playerName)
 	{
 		this.id = playerId;
 		this.name = playerName;
-		if(playerId == 0)
+		this.setToken(playerId);
+		
+	}
+
+	public void setToken(int playerId)
+	{
+		if(playerId == 0 )
 		{
 			this.token = 'X';
 		}
@@ -20,7 +31,14 @@ public class Player
 			this.token = 'O';
 		}
 	}
-
+	public void setId(int playerId)
+	{
+		this.id = playerId;
+	}
+	public void setName(String playerName)
+	{
+		this.name = playerName;
+	}
 	public String getName()
 	{
 		return this.name;
