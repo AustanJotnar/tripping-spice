@@ -25,7 +25,7 @@ public class SelAssertGameBoardTitleFirefox {
 	public void testSelAssertGameBoardTitleFirefox() throws Exception {
 		selenium.open("/");
 		assertEquals("TicTacToe", selenium.getTitle());
-		assertTrue(selenium.isElementPresent("id=gameboard0123"));
+		assertTrue(selenium.isElementPresent("id=sdgameboard0123"));
 		//selenium.sendKeys("id=player0", "Johannes");
 		//selenium.sendKeys("id=player1", "Fannar");
 		assertTrue(selenium.isElementPresent("css=button.btn.btn-default"));
