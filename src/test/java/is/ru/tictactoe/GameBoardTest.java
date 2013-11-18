@@ -11,7 +11,7 @@ public class GameBoardTest
         char test[] = new char[9];
         for(int i = 0; i < 9; i++)
         {
-        	test[i] = 'f';
+        	test[i] = ' ';
         }
         assertArrayEquals(test, gb.getBoard());
     }
