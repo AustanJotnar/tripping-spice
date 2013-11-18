@@ -18,7 +18,7 @@ public class GameBoard
     public int addToBoard(char token, int pos)
     {
     	if( (token == 'X' || token == 'O') 
-            && pos >= 0 && pos < 9 && this.board[pos] == '')
+            && pos >= 0 && pos < 9 && this.board[pos] == ' ')
     	{
     		this.board[pos] = token;
             return pos;
@@ -33,13 +33,13 @@ public class GameBoard
     {
     	for(int i = 0; i < 9; i++)
     	{
-    		this.board[i] = '';
+    		this.board[i] = ' ';
     	}
     }
 
     public boolean emptyCell(int c)
     {
-    	if(c >= 0 && c < 9 && this.board[c] == '')
+    	if(c >= 0 && c < 9 && this.board[c] == ' ')
     	{
             return true;
         }
