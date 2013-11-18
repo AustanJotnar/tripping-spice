@@ -1,0 +1,39 @@
+Design of TicTacToe
+
+Introduction
+
+
+1 Design
+
+	Classes
+		TicTacToe
+			Properties
+				Player activePlayer
+    			Player player1;
+    			Player player2;
+       			GameBoard gameBoard;
+			
+			Methods
+				Player getActivePlayer()
+				void switchPlayer()
+				int checkForWinner()
+
+		GameBoard
+			Properties
+				char[] board
+			
+			Methods
+				char[] getBoard()
+				int addToBoard(char token, int pos)
+				void resetBoard()
+
+
+		Player
+			Properties
+			
+			Methods
+
+		PlayGame
+			Properties
+			
+			Methods

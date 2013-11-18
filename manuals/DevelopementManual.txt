@@ -2,7 +2,7 @@
 
 Follow these steps to set up our source control and build environment
 
-NODE that it is advised to use linux as the OS in the development. Using other OS's is at your own risk.
+NOTE that it is advised to use linux as the OS in the development. Using other OS's is at your own risk.
 
 1. Git setup
 # If you don't have a account on github, make an account on https://github.com/
