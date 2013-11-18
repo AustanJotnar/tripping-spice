@@ -10,7 +10,7 @@ $(document).ready(function(){
         url: form.attr('action'),
         data: 'player0=' + player0 + '&player1=' + player1
       }).done(function(result){
-        $('#test').html(result).attr('class', 'alert alert-success');
+        $('#test').html(player0 +"'s move").attr('class', 'alert alert-success');
       }).fail(function(){
         $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
       });
