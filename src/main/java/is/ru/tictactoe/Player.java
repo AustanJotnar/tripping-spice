@@ -30,7 +30,7 @@ public class Player
 	{
 		return this.id;
 	}
-	public int getToken()
+	public char getToken()
 	{
 		return this.token;
 	}

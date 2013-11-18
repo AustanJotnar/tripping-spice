@@ -5,25 +5,26 @@ import spark.*;
 
 public class PlayGame
 {
-	// public void play(tictactoe game)
-	// {
-	// 	char token = 'f';
-	// 	int pos = 0;
-	// 	while(game.checkForWinner() == 0)
- //        {    
+	public void play(TicTacToe game)
+	{
+		int pos = 0;
+		while(game.checkForWinner() == 0)
+        {    
+           	//TODO print into HTML
+           	System.out.println("Player " + game.getActivePlayer().getToken() + ". Make a move!");
             
- //           game.
-            
- //            System.out.println(("Player " + token + ". Make a move!");
-            
- //            //TODO get move from HTML
+            //TODO JavaScript get move from HTML and mark cell with game.activePlayer.getToken()
 
- //            game.gameBoard.addToBoard(token, pos);
+            game.gameBoard.addToBoard(game.getActivePlayer().getToken(), pos);
             
- //            game.switchPlayer()
- //            ttt.display();
- //        }
-	// }
+            if(game.checkForWinner() == 0)
+            {
+            	game.switchPlayer();
+            }
+        }
+        //TODO print into HTML
+        System.out.println("Player " + game.getActivePlayer().getName() + " is the Winner!");
+	}
 	public static void main(String[] args)
 	{
 		staticFileLocation("/public");
