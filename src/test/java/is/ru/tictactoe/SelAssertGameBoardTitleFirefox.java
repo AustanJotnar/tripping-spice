@@ -1,4 +1,4 @@
-//package is.ru.tictactoe;
+package is.ru.tictactoe;
 
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -26,8 +26,8 @@ public class SelAssertGameBoardTitleFirefox {
 		selenium.open("/");
 		assertEquals("TicTacToe", selenium.getTitle());
 		assertTrue(selenium.isElementPresent("id=gameboard"));
-		//selenium.sendKeys("id=player0", "Johannes");
-		//selenium.sendKeys("id=player1", "Fannar");
+		selenium.sendKeys("id=player0", "Johannes");
+		selenium.sendKeys("id=player1", "Fannar");
 		assertTrue(selenium.isElementPresent("css=button.btn.btn-default"));
 		selenium.clickAt("css=button.btn.btn-default", "");
 	}
