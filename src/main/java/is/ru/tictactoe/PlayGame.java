@@ -18,7 +18,7 @@ public class PlayGame
             }
             else if(game.checkForWinner() == 3) 
         	{
-            	return Integer.toString(positiongit ) + token + "It's a draw!";
+            	return Integer.toString(position) + token + "It's a draw!";
         	}
             game.switchPlayer();
 		}
