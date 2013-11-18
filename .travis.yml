@@ -1,2 +1,8 @@
 language: java
 jdk: oraclejdk7
+deploy:
+  api_key:
+    secure: ZM1Uv+qeTNXmYkh2nQGCqpPismuVnsJxrByluy6gTBfLMQFm1jCEGUVx5viB88K1W9XcLabDBu+3o88NFow2zVNpYv1AlPq4c5bo/0p2KIlYVPekIykCu9nKZydw9bOmkycuCvpT/NKL5f/2tPn1zWiM2rTsKN/GecIUC214Z7o=
+    app:
+    master:  ajtictac
+

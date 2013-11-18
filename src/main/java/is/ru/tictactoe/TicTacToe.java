@@ -10,7 +10,7 @@ public class TicTacToe
 
     public TicTacToe()
     {
-        this.gameBoard = new GameBoard(); 
+        
     }
     public TicTacToe(Player p1, Player p2)
     {
@@ -25,6 +25,7 @@ public class TicTacToe
         this.activePlayer = p1;
         this.player1 = p1;
         this.player2 = p2; 
+        this.gameBoard = new GameBoard(); 
     }
     public Player getPlayer(int player) 
     {
