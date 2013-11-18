@@ -11,6 +11,7 @@ $(document).ready(function(){
         data: 'player0=' + player0 + '&player1=' + player1
       }).done(function(result){
         $('#test').html(player0 +"'s move").attr('class', 'alert alert-success');
+        $('.cell').html("&nbsp;");
       }).fail(function(){
         $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
       });
