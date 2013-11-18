@@ -10,6 +10,10 @@
     <!-- load bootstrap for nicer ui -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
  
+    <!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="Scripts/tictactoe.js"></script>
+
   </head>
   <body>
 
@@ -29,6 +33,7 @@
       </form>
          <div id="test">
       </div>
+
       <div id="game-layout">
         <div id="gameboard">
             <table id="tictactoe">
@@ -58,33 +63,8 @@
    
 
     </div>
-    <!-- load jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-    </script>
 
-    <script>
-    $(document).ready(function(){
-      var form = $('form');
-      form.submit(function(e){
-        var player0 = $("#player0").val();
-        var player1 = $("#player1").val();
-        if(player0 != "" && player1 != "")
-        {
-          $.ajax({
-            type: form.attr('method'),
-            url: form.attr('action'),
-            data: 'player0=' + player0 + '&player1=' + player1
-          }).done(function(result){
-            $('#test').html(result).attr('class', 'alert alert-success');
-          }).fail(function(){
-            $('#test').html('Villa kom upp').attr('class', 'alert alert-danger');
-          });
-        }
-        e.preventDefault();
-      });
-    });
-
-    </script>
+    
 
   </body>
 </html>
