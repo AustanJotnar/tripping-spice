@@ -35,6 +35,15 @@ public class PlayGame
 	public static void main(String[] args)
 	{
 		staticFileLocation("/public");
+		if(System.getenv("PORT") == null)
+		{
+			setPort(4567);
+		}	
+		else
+		{
+			setPort(Integer.valueOf(System.getenv("PORT")));
+		}
+		
 		post(new Route("/add") 
 		{
              @Override
