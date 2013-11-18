@@ -21,10 +21,51 @@ public class TicTacToeTest
     	assertEquals(1, game.getActivePlayer().getId());
     }
     @Test
-    public void testCheckForWinner()
+    public void testCheckForWinnerNoWinner()
     {
         int test = game.checkForWinner();
         assertEquals(0, test);
+    }
+    @Test
+    public void testCheckForWinnerXWins()
+    {
+        for(int i = 0; i < 9; i += 4)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        int test = game.checkForWinner();
+        assertEquals(1, test);
+    }
+    @Test
+    public void testCheckForWinnerOWins()
+    {
+        game.switchPlayer();
+        for(int i = 1; i < 9; i += 3)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        int test = game.checkForWinner();
+        assertEquals(2, test);
+    }
+    @Test
+    public void testCheckForWinnerDraw()
+    {
+        //xxo
+        //oox
+        //xxo
+        game.gameBoard.addToBoard('X', 0);
+        game.gameBoard.addToBoard('X', 1);
+        game.gameBoard.addToBoard('O', 2);
+        game.gameBoard.addToBoard('O', 3);
+        game.gameBoard.addToBoard('O', 4);
+        game.gameBoard.addToBoard('X', 5);
+        game.gameBoard.addToBoard('X', 6);
+        game.gameBoard.addToBoard('X', 7);
+        game.gameBoard.addToBoard('O', 8);
+        game.switchPlayer();
+
+        int test = game.checkForWinner();
+        assertEquals(3, test);
     }
 }
 

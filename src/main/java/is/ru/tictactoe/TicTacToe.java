@@ -5,7 +5,7 @@ public class TicTacToe
     private Player activePlayer;
     private Player player1;
     private Player player2;
-    private GameBoard gameBoard;
+    public GameBoard gameBoard;
 
     public TicTacToe(Player p1, Player p2)
     {
@@ -63,7 +63,7 @@ public class TicTacToe
         boolean draw = true;
         for(int i = 0; i < 9; i++)
         {
-            if (this.gameBoard.getBoard()[0] != 'X' && this.gameBoard.getBoard()[0] != 'O')
+            if (this.gameBoard.getBoard()[i] != 'X' && this.gameBoard.getBoard()[i] != 'O')
             {
                 draw = false;
             }
