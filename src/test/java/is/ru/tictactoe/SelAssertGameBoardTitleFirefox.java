@@ -1,4 +1,4 @@
-package is.ru.tictactoe;
+//package is.ru.tictactoe;
 
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
