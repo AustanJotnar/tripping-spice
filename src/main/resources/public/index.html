@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="AustanJotnar.is" content="Play TicTacToe" />
-    <title>TicTacToe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- current stylesheet -->
-    <link rel="stylesheet" type="text/css" href="tictacstyle.css">
-    <!-- load bootstrap for nicer ui -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
- 
-    <!-- load jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="Scripts/tictactoe.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="AustanJotnar.is" content="Play TicTacToe" />
+  <title>TicTacToe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- current stylesheet -->
+  <link rel="stylesheet" type="text/css" href="Styles/tictacstyle.css">
+  <!-- load bootstrap for nicer ui -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 
-  </head>
-  <body>
+  <!-- load jquery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="Scripts/tictactoe.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Master of all TicTacToes!</h1>
 
-    <div class="container">
-      <h1>Master of all TicTacToes!</h1>
-      
-      <form method="post" action="/add" class="form-inline" role="form"> 
-        <div class="form-group">
-          <input type="text" class="form-control" name="player0" id="player0"
-          placeholder="Player X">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" name="player1" id="player1"
-          placeholder="Player O">
-        </div>
-        <button type"submit" class="btn btn-default">Start Playing</button>
-      </form>
-         <div id="test">
+    <form method="post" action="/add" class="form-inline" role="form"> 
+      <div class="form-group">
+        <input type="text" class="form-control" name="player0" id="player0"
+        placeholder="Player X">
       </div>
-
-      <div id="game-layout">
-        <div id="gameboard">
-            <table id="tictactoe">
-                <tbody>
-                    <tr>
-                        <td class="cell" id="cell0">&nbsp;</td>
-                        <td class="cell" id="cell1">&nbsp;</td>
-                        <td class="cell" id="cell2">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="cell" id="cell3">&nbsp;</td>
-                        <td class="cell" id="cell4">&nbsp;</td>
-                        <td class="cell" id="cell5">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="cell" id="cell6">&nbsp;</td>
-                        <td class="cell" id="cell7">&nbsp;</td>
-                        <td class="cell" id="cell8">&nbsp;</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="player1" id="player1"
+        placeholder="Player O">
+      </div>
+      <button type"submit" class="btn btn-default">Start Playing</button>
+    </form>
+    <div id="test">
     </div>
-
-
-
-   
-
+    <div id="game-layout">
+      <div id="gameboard">
+        <table id="tictactoe" class="tictactoe">
+          <tbody>
+            <tr>
+              <td class="cell" id="cell0">&nbsp;</td>
+              <td class="cell" id="cell1">&nbsp;</td>
+              <td class="cell" id="cell2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="cell" id="cell3">&nbsp;</td>
+              <td class="cell" id="cell4">&nbsp;</td>
+              <td class="cell" id="cell5">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="cell" id="cell6">&nbsp;</td>
+              <td class="cell" id="cell7">&nbsp;</td>
+              <td class="cell" id="cell8">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    
-
-  </body>
+  </div>
+</body>
 </html>
