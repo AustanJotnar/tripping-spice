@@ -65,7 +65,6 @@ public class PlayGame
 				{
 					player0.setName(name0);
 					player1.setName(name1);
-					game.gameBoard.resetBoard();
 					game.addPlayers(player0, player1);
 					return name0 + " " + name1;	
 				}					

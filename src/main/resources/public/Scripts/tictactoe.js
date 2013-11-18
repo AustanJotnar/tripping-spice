@@ -20,17 +20,21 @@ $(document).ready(function(){
 
 
   $("#tictactoe tr td").click(function(){
-    $.ajax({
-      type: "POST",
-      url: "/click",
-      data: 'cell=' + (this.id)
-    }).done(function(result){
-      $('#test').html(result.substring(2)).attr('class', 'alert alert-success');
-      $('#cell'+ result[0]).text(result[1]);
-    }).fail(function(){
-      $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
+    
+    var cellText = $("#" + this.id).text();
+    if(cellText != "X" && cellText != "O")
+    {
+      $.ajax({
+        type: "POST",
+        url: "/click",
+        data: 'cell=' + (this.id)
+        }).done(function(result){
+        $('#test').html(result.substring(2)).attr('class', 'alert alert-success');
+        $('#cell'+ result[0]).text(result[1]);
+        }).fail(function(){
+        $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
+        });
+    }
   });
-
-});
 });
     
