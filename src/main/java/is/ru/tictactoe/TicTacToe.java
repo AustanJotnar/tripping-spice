@@ -7,6 +7,11 @@ public class TicTacToe
     private Player player2;
     public GameBoard gameBoard;
 
+
+    public TicTacToe()
+    {
+        this.gameBoard = new GameBoard(); 
+    }
     public TicTacToe(Player p1, Player p2)
     {
     	this.activePlayer = p1;
@@ -15,6 +20,12 @@ public class TicTacToe
     	this.gameBoard = new GameBoard();
     }
     
+    public void addPlayers(Player p1, Player p2)
+    {
+        this.activePlayer = p1;
+        this.player1 = p1;
+        this.player2 = p2; 
+    }
     public Player getPlayer(int player) 
     {
     	if(player == 0)

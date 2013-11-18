@@ -35,6 +35,10 @@ public class PlayGame
 	public static void main(String[] args)
 	{
 
+		final Player player0 = new Player(0);
+		final Player player1 = new Player(1);
+		final TicTacToe game = new TicTacToe();
+
 		staticFileLocation("/public");
 		if(System.getenv("PORT") == null)
 		{
@@ -44,9 +48,6 @@ public class PlayGame
 		{
 			setPort(Integer.valueOf(System.getenv("PORT")));
 		}
-		
-		final Player player0 = new Player(0);
-		final Player player1 = new Player(1);
 
 		post(new Route("/add") 
 		{
@@ -71,12 +72,12 @@ public class PlayGame
 				{
 					player0.setName(name0);
 					player1.setName(name1);
+					game.addPlayers(player0, player1);
 					return name0 + " " + name1;	
 				}					
              }
          });
 
-		final TicTacToe game = new TicTacToe(player0, player1);
 		post(new Route("/click") 
 		{
              @Override
@@ -85,10 +86,13 @@ public class PlayGame
                 
                 int number = (Integer.valueOf(cell.replaceFirst(".*?(\\d+).*","$1")));
 
-                
-                play(game, number);
+                if(game.getActivePlayer() != null)
+                {
+                	play(game, number);
 
-                return number;
+                	return number;
+                }
+                return "Add players to game"; 	
 			}
 		});
 
