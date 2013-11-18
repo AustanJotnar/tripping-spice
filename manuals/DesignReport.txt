@@ -3,37 +3,108 @@ Design of TicTacToe
 Introduction
 
 
-1 Design
+Design
 
 	Classes
 		TicTacToe
 			Properties
 				Player activePlayer
-    			Player player1;
-    			Player player2;
-       			GameBoard gameBoard;
+					Active player at this time of the game.
+    			
+    			Player player1
+    			Player player2
+    				Players in the game.
+
+       			GameBoard gameBoard
+       				Gameboard that belongs to current game.
 			
 			Methods
 				Player getActivePlayer()
+					Returns the Active Player.
+
 				void switchPlayer()
+					Switches which players is has move.
+
 				int checkForWinner()
+					Checks status of the game.
+					Returns 0 if there is no result yet.
+					Returns 1 if Player 1 has won.
+					Returns 2 if Player 2 has won.
+					Returns 3 if there is a draw
 
 		GameBoard
 			Properties
 				char[] board
-			
+					This is the gameboard, it stores 'X', 'O'  or ' ' for empty field.
+					
+					Structure of the gameboard.
+
+					0 | 1 | 2
+					---------
+					3 | 4 | 5
+					---------
+					6 | 7 | 8
+
 			Methods
 				char[] getBoard()
+					Returns the gameboard.
+
 				int addToBoard(char token, int pos)
+					Adds tokens 'X' or 'O' to position pos on the gameboard if the position
+					is free and not out of bounds.  
+
 				void resetBoard()
+					Resets the gameboard by Replacing all the tokens with space ' '. 
+
+				boolean emptyCell(int c)
+					Returns true if cell at position c is empty else it returns false.
 
 
 		Player
 			Properties
-			
+				int id
+					Id of the plaeyr, e.g. Player 1 or Player 2.
+
+				String name
+					Name of the player.
+
+				char token
+					The players token 'X' for player 1 'O' for player 2
+
 			Methods
+				String getName()
+					Returns the name of the player.
+
+				int getId()
+					Returns the players id.
+
+				char getToken()
+					Returns the players token.
 
 		PlayGame
 			Properties
-			
+				No properties. This class is for running the game.
+
 			Methods
+				void play(TicTacToe game)
+
+				void main(String[] args)
+					Runs the game and interacts with web page.
+
+	Developement
+		Description
+		TDD
+		Coding Rules
+		Easy setup - scripts
+		Developement Tools
+
+	Servers
+		WebServer
+		Integration Server
+		Staging Server
+		Production Server
+
+	Testing
+		Unit Test
+		Selenium Test
+
