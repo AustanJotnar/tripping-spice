@@ -3,4 +3,7 @@ jdk: oraclejdk7
 deploy:
   provider: heroku
   api_key:
-    secure: ir++B56jJzGkUjnAQED1jLV71JDdxEWzzUbRefbusTPdrOXzB34YGZCAZVRdUmNF6qosIkZEYwWrNl8wM3bvi4G2oyxf8BDk6Pggt3F0N0qNP5qMtYCfABe6hE+HcLZ+iynZPRhUUqr/agBM+hx9kaSdUiWkiVcTlQY3ZA3zAE4=
+    secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
+  app: ajtictac
+  on:
+    repo: AustanJotnar/tripping-spice
