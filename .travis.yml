@@ -19,6 +19,15 @@ before_script:
 script:
 #
 after_success:
+        - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+        - git remote add heroku git@heroku.com:ajtictac.git.git
+        - echo "Host heroku.com" >> ~/.ssh/config
+        - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+        - echo "   CheckHostIP no" >> ~/.ssh/config
+        - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+        - heroku keys:clear
+        - yes | heroku keys:add
+        - yes | git push heroku master
   - "sh -e bin/seleniumtravis"
   - "sh -e bin/success"
 after_script:
