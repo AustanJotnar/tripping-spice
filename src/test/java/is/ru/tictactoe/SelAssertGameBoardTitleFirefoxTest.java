@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 import static org.apache.commons.lang3.StringUtils.join;
 
-public class SelAssertGameBoardTitleFirefox {
+public class SelAssertGameBoardTitleFirefoxTest {
 	private Selenium selenium;
 
 	@Before
@@ -24,8 +24,8 @@ public class SelAssertGameBoardTitleFirefox {
 	@Test
 	public void testSelAssertGameBoardTitleFirefox() throws Exception {
 		selenium.open("/");
-		assertEquals("TicTacToe", selenium.getTitle());
-		assertTrue(selenium.isElementPresent("id=sdgameboard0123"));
+		assertEquals("TicTacToe12", selenium.getTitle());
+		assertTrue(selenium.isElementPresent("id=gameboard"));
 		//selenium.sendKeys("id=player0", "Johannes");
 		//selenium.sendKeys("id=player1", "Fannar");
 		assertTrue(selenium.isElementPresent("css=button.btn.btn-default"));
