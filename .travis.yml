@@ -8,5 +8,3 @@ deploy:
   on:
     repo: AustanJotnar/tripping-spice
   after_script: 
-	-export STAGING_SERVER="http://ajtictac.herokuapp.com/"
-	-mvn test-compile failsafe:integration-test
