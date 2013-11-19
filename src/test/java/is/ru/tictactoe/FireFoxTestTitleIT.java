@@ -23,7 +23,7 @@ public class FireFoxTestTitleIT {
 	@Test
 	public void testFireFoxTestTitleIT() throws Exception {
 		selenium.open("/");
-		assertEquals("TicTacToe", selenium.getTitle());
+		assertEquals("TicTacToe!", selenium.getTitle());
 	}
 
 	@After
