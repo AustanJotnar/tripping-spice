@@ -12,6 +12,7 @@ deploy:
     production: ajtictac
   on:
     repo: AustanJotnar/tripping-spice
+    branch: staging
   #Use this to install any prerequisites 
   #or dependencies necessary to run your build
 before_script:
