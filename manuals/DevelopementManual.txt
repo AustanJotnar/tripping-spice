@@ -24,10 +24,7 @@ cd tripping-spice
 
 2. Java and Maven
 # To setup Java run: 
-sudo apt-get install openjdk-7-jdk
-
-# Install maven
-sudo apt-get install maven
+bin/dev_setup
 
 # Run: 
 java -version
