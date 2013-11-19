@@ -7,7 +7,9 @@ deploy:
   provider: heroku
   api_key:
     secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
-  app: ajtictac
+  app: 
+    master: ajtictac-staging
+    production: ajtictac
   on:
     repo: AustanJotnar/tripping-spice
   #Use this to install any prerequisites 
