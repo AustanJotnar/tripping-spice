@@ -9,7 +9,7 @@ deploy:
     secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
   app: ajtictac
   on:
-    repo: github.com/AustanJotnar/tripping-spice
+    repo: AustanJotnar/tripping-spice
   #Use this to install any prerequisistes 
   #or dependencies necessary to run your build
 before_script:
