@@ -8,7 +8,7 @@ deploy:
   on:
     repo: AustanJotnar/tripping-spice
   after_script: 
-  - "export STAGING_SERVER=http://http://ajtictac.herokuapp.com/"
+  - "export STAGING_SERVER=http://ajtictac.herokuapp.com/"
   - "sh bin/selenium_test_xvfb"
 
 
