@@ -8,7 +8,8 @@ deploy:
   on:
     repo: AustanJotnar/tripping-spice
   after_script: 
-  - "export STAGING_SERVER=${STAGING_SERVER:='http://localhost:4567'}"
-  - "mvn test-compile"
-  - "mvn failsafe:integration-test"
+  - export STAGING_SERVER=http://http://ajtictac.herokuapp.com/
+  - sh bin/selenium_test_xvfb
+
+
 
