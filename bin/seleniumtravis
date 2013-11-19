@@ -2,4 +2,3 @@
 echo "-> SELENIUM TEST IN PROGRESS <-"
 export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'
 mvn test-compile failsafe:integration-test failsafe:verify
-echo "-> selenium test done <-"
