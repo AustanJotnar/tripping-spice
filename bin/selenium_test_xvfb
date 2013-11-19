@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Xvfb
+sudo bin/xvfb start
+export DISPLAY=:99
+
+# Run tests
+export STAGING_SERVER="http://ajtictac.herokuapp.com/"
+mvn test-compile failsafe:integration-test
+
+# Clean up
+sudo bin/xvfb stop
