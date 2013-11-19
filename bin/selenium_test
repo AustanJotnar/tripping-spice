@@ -2,5 +2,4 @@
 
 export STAGING_SERVER=${STAGING_SERVER:='http://localhost:4567'}
 
-mvn test-compile
-mvn failsafe:integration-test
+mvn test-compile failsafe:integration-test failsafe:verify

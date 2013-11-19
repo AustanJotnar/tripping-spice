@@ -8,14 +8,7 @@ deploy:
   on:
     repo: AustanJotnar/tripping-spice
   after_script: 
-  - "export DISPLAY=:99.0"
-  - "export STAGING_SERVER=http://ajtictac.herokuapp.com/"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3
-  - rackup
-  - sleep 3
-  - "mvn test-compile failsafe:integration-test"
-  - "sh -e /etc/init.d/xvfb stop"
-  - "sh bin/selenium_test_xvfb"
+    - export STAGING_SERVER=http://ajtictac.herokuapp.com/
+    - sh bin/selenium_test_xvfb
 
 

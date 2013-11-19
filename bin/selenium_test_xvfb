@@ -6,7 +6,10 @@ export DISPLAY=:99
 
 # Run tests
 export STAGING_SERVER="http://ajtictac.herokuapp.com/"
-mvn test-compile failsafe:integration-test
+mvn test-compile failsafe:integration-test failsafe:verify
+EXIT_CODE=$?
 
 # Clean up
 sudo bin/xvfb stop
+
+exit $EXIT_CODE
