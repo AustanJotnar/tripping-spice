@@ -24,7 +24,6 @@ script:
 after_deploy:
   - "sh -e bin/seleniumtravis"
   - "sh -e bin/success"
-  - "git push heroku.com:ajtictac.git master"
 after_script:
   - "sh -e /etc/init.d/xvfb stop"
 after_failure:
