@@ -1,7 +1,7 @@
 table.tictactoe {
-	border-collapse: separate;
-	border-spacing: 10px;
-	margin: 0px auto 0px;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin: 0px auto 0px;
 }
 .tictactoe .cell{
     margin: 10px;
@@ -15,36 +15,35 @@ table.tictactoe {
     font-weight: 900;
 }
 .tictactoe .cell:hover {
-	background-color: #CACACA;
+    background-color: #CACACA;
 }
 
 .tictactoe .cell.marked {
-	background-color: #B8B8B8;
+    background-color: #B8B8B8;
 }
 .form-inline {
 
 }
-#overlay {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    width: 333px;
-    height: 333px;
-    margin-left: -166px;
-    margin-top: -215px;
-    background: #000;
-    border-radius: 20px;
-    opacity: 0.8;
-}
-#overlay-messages {
+#gameboard {
+    position: relative;
     display: inline-block;
+    left: 25%;
+}
+#gameboard .overlay {
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 0px;
+    left: 25%;
+    margin: 0px 0px 0px -25%;
+    border-radius: 20px;
+    background-color: #000;
+    opacity: 0.8;
+    height: 340px;
+    width: 340px;
     text-align: center;
-    font-size: xx-large;
+    padding: 40% 0;
+}
+#gameboard .overlay p {
+    font-size: 2em;
     font-weight: bolder;
-    margin: 0 0 0 -70px;
-    padding: 0px;
-    color: #fff;
+    color: #fff;    
 }

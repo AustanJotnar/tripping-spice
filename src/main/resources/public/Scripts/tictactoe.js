@@ -20,8 +20,6 @@ $(document).ready(function(){
     e.preventDefault();
   });
 
-  var overlay = '<div id="overlay">'+ '<p id="overlay-messages"> Finished </p>' + '</div>';
-
   $("#tictactoe tr td").click(function(){
     
     var cellText = $("#" + this.id).text();
@@ -36,6 +34,7 @@ $(document).ready(function(){
         $('#cell'+ result[1]).text(result[2]);
         if(result[0] == "F")
         {
+          var overlay = $('<div/>').addClass('overlay').append($('<p/>').text('Finished'));
           $(overlay).appendTo('#gameboard');
         }
         }).fail(function(){
