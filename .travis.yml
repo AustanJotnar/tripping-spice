@@ -12,7 +12,7 @@ deploy:
     production: ajtictac
   on:
     repo: AustanJotnar/tripping-spice
-  #Use this to install any prerequisites 
+  #Use this to install any prerequisistes 
   #or dependencies necessary to run your build
 before_script:
   - "export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'"
