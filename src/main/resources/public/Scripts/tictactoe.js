@@ -12,7 +12,7 @@ $(document).ready(function(){
       }).done(function(result){
         $('#test').html(player0 +"'s move").attr('class', 'alert alert-success');
         $('.cell').html("&nbsp;");
-        $('#overlay').remove();
+        $('.overlay').remove();
       }).fail(function(){
         $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
       });
