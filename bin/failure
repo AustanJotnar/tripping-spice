@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "After failure script running -> Some unknown ERROR"
