@@ -11,7 +11,7 @@ deploy:
     master: ajtictac-staging
     production: ajtictac
   on:
-    repo: AustanJotnar/tripping-spice
+    repo: AustanJotnar/tripping-spice/tree/staging
   #Use this to install any prerequisistes 
   #or dependencies necessary to run your build
 before_script:
