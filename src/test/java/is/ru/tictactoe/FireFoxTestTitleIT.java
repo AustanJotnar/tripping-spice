@@ -16,7 +16,7 @@ public class FireFoxTestTitleIT {
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://ajtictac.herokuapp.com/";
+		String baseUrl = STAGING_SERVER;
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
