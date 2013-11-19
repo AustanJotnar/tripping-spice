@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "-> SELENIUM TEST IN PROGRESS <-"
-echo "yes" | git push heroku.com:ajtictac-staging.git master 
+echo "yes\n" | git push heroku.com:ajtictac-staging.git master 
 export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'
 mvn test-compile failsafe:integration-test failsafe:verify
 echo "-> selenium test done <-"
