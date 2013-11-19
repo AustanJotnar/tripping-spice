@@ -12,6 +12,7 @@ $(document).ready(function(){
       }).done(function(result){
         $('#test').html(player0 +"'s move").attr('class', 'alert alert-success');
         $('.cell').html("&nbsp;");
+        $('#overlay').remove();
       }).fail(function(){
         $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
       });
@@ -19,6 +20,7 @@ $(document).ready(function(){
     e.preventDefault();
   });
 
+  var overlay = '<div id="overlay">'+ '<p id="overlay-messages"> Finished </p>' + '</div>';
 
   $("#tictactoe tr td").click(function(){
     
@@ -34,7 +36,7 @@ $(document).ready(function(){
         $('#cell'+ result[1]).text(result[2]);
         if(result[0] == "F")
         {
-          $('.cell').unbind('click');
+          $(overlay).appendTo('#gameboard');
         }
         }).fail(function(){
         $('#test').html('An error occurred.').attr('class', 'alert alert-danger');

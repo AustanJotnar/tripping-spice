@@ -21,3 +21,30 @@ table.tictactoe {
 .tictactoe .cell.marked {
 	background-color: #B8B8B8;
 }
+.form-inline {
+
+}
+#overlay {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 333px;
+    height: 333px;
+    margin-left: -166px;
+    margin-top: -215px;
+    background: #000;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+#overlay-messages {
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 0 0 0 -70px;
+    padding: 0px;
+    color: #fff;
+}
