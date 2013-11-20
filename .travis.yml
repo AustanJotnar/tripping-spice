@@ -1,17 +1,12 @@
 language: java
 jdk: oraclejdk7
-env:
-  global:
-    secure: QgyZde9u8WP2jX3QcndeUeAOE2YMVubRuj295aK26PkPIyZU//E1bWEhyTUlltCOeRTaZBA7m5S/bfVLkWZyN9R6ghFoLcdGDhu9zyrYOU8fl9/s9RMkWTJYmud/FY+EYU9ot9XtO+k+In5xA8ae/zJZjw4m2eS4fdVtpYQwgRI=
 deploy:
   provider: heroku
   api_key:
     secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
-  app: ajtictac
+  app: ajtictac-staging
   on:
     repo: AustanJotnar/tripping-spice
-  #Use this to install any prerequisistes 
-  #or dependencies necessary to run your build
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -19,12 +14,7 @@ before_script:
 script:
 #
 after_deploy:
-  provider: heroku
-  api_key:
-    secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
-  app: ajtictac
-  on:
-    repo: AustanJotnar/tripping-spice
+  - "sh bin/seleniumtravis"
 after_script:
   - "sh -e /etc/init.d/xvfb stop"
 after_failure:

@@ -12,6 +12,7 @@ $(document).ready(function(){
       }).done(function(result){
         $('#test').html(player0 +"'s move").attr('class', 'alert alert-success');
         $('.cell').html("&nbsp;");
+        $('#btn').html("Restart Game")
         $('.overlay').remove();
       }).fail(function(){
         $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
@@ -34,7 +35,7 @@ $(document).ready(function(){
         $('#cell'+ result[1]).text(result[2]);
         if(result[0] == "F")
         {
-          var overlay = $('<div/>').addClass('overlay').append($('<p/>').text('Finished'));
+          var overlay = $('<div/>').addClass('overlay').append($('<p/>').text('Finished')).append($('<p/>').text(result.substring(3))).append($('<p/>').text('Click "Restart Game" to play again.'));
           $(overlay).appendTo('#gameboard');
         }
         }).fail(function(){
