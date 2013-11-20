@@ -2,10 +2,9 @@
 echo "-> SELENIUM TEST IN PROGRESS <-"
 export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'
 mvn test-compile failsafe:integration-test failsafe:verify
-
-if[ $? -eq 0 ]
-then
-  exit 0
-else
-  exit -1
-fi 
+if [ $? -eq 0 ]
+  then
+    echo "-> The staging server test is a success <-" #TODO implement deploy to pruduction script
+  else
+  	echo "-> The staging server test failed <-" #TODO Tell Travis-CI that the test failed
+fi
