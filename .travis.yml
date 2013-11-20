@@ -1,5 +1,5 @@
 language: java
-jdk: oraclejdk7git che
+jdk: oraclejdk7
 deploy:
   provider: heroku
   api_key: 
@@ -9,7 +9,7 @@ deploy:
     repo: AustanJotnar/tripping-spice
 #install:
 #  - mvn install -Dmaven.test.skip.integration.tests
-after_install:
+before_install:
   - "sh bin/success"
 before_script:
   - "export DISPLAY=:99.0"
