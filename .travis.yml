@@ -1,7 +1,5 @@
 language: java
-jdk: oraclejdk7
-env:
-  - skip.integration.tests = true
+jdk: oraclejdk7git che
 deploy:
   provider: heroku
   api_key: 
@@ -10,7 +8,7 @@ deploy:
   on:
     repo: AustanJotnar/tripping-spice
 before_install:
-  - "sh bin/seleniumtravis"
+- "sh bin/success"
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
@@ -18,7 +16,7 @@ before_script:
 script:
 #
 after_deploy:
-#  - "sh bin/seleniumtravis"
+ - "sh bin/seleniumtravis"
 after_script:
   - "sh -e /etc/init.d/xvfb stop"
 after_failure:
