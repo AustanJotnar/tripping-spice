@@ -16,4 +16,5 @@ heroku keys:clear
 # Add a new SSH key to Heroku
 yes | heroku keys:add
 # Push to Heroku!
+git pull
 yes | git push heroku master
