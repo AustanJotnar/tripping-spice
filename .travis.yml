@@ -9,8 +9,8 @@ deploy:
     repo: AustanJotnar/tripping-spice
 #install:
 #  - mvn install -Dmaven.test.skip.integration.tests
-before_install:
-  - "sh bin/success"
+#before_install:
+ # - "sh bin/success"
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
