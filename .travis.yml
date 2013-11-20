@@ -19,7 +19,7 @@ before_script:
 script:
 #
 after_deploy:
-  - "sh -e bin/seleniumtravis"
+  - "sh bin/seleniumtravis"
   - "sh -e bin/success"
 after_script:
   - "sh -e /etc/init.d/xvfb stop"
