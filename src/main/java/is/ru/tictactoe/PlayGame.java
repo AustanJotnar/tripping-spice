@@ -76,12 +76,17 @@ public class PlayGame
 		{
              @Override
              public Object handle(Request request, Response response) {
-                String cell = (String.valueOf(request.queryParams("cell")));
                 
-                int number = (Integer.valueOf(cell.replaceFirst(".*?(\\d+).*","$1")));
-
-                return play(game, number);
-                	
+                if(game.getActivePlayer() != null)
+                {	
+                	String cell = (String.valueOf(request.queryParams("cell")));
+                	int number = (Integer.valueOf(cell.replaceFirst(".*?(\\d+).*","$1")));
+                	return play(game, number);
+                }
+                else
+                {
+                	return "***Add players to the game!";
+                }	
 			}
 		});
 
