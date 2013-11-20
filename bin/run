@@ -1,7 +1,23 @@
 #!/bin/bash
+if [ -z "$1" ]; then
+	echo "`basename $0` {start|stop}"
+	exit
+fi
 
-export PORT=4567
-java -jar target/tictactoe-1.0-SNAPSHOT-jar-with-dependencies.jar
-
-
-
+case "$1" in
+start)
+	export PORT=4567
+	nohup java -jar target/tictactoe-1.0-SNAPSHOT-jar-with-dependencies.jar > my.log 2>&1& OURPID=$!
+	
+	echo $OURPID > bin/.runningSparkPID.hidden
+	echo "Starting Spark session on localhost:$PORT with PID = $OURPID"
+	#nohup bin/run >my.log 2>&1& echo $! > save_pid.txt
+	rm my.log
+;;	
+stop)
+	RUNNINGSPARKPIDX=$(cat bin/.runningSparkPID.hidden)
+	echo "Stopping Spark session running on $RUNNINGSPARKPIDX"
+	kill -9 $RUNNINGSPARKPIDX
+	rm bin/.runningSparkPID.hidden
+;;
+esac
