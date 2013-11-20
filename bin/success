@@ -1,6 +1,19 @@
 #!/bin/bash
 echo "-> The staging server test is a success <-" #TODO implement deploy to pruduction script
-chmod 600 .travis/deploy_key.pem # this key should have push access
-ssh-add .travis/deploy_key.pem
-git remote add deploy git@heroku.com:ajtictac.git #DEPLOY_REPO_URI_GOES_HERE
-git push deploy
+# Install the Heroku gem (or the Heroku toolbelt)
+gem install heroku
+# Add your Heroku git repo:
+git remote add heroku git@heroku.com:ajtictac.git
+# Add your Heroku API key:
+export HEROKU_API_KEY=485d645f-40af-45eb-b912-7dacd5102ffc
+# Turn off warnings about SSH keys:
+echo "Host heroku.com" >> ~/.ssh/config
+echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+echo "   CheckHostIP no" >> ~/.ssh/config
+echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+# Clear your current Heroku SSH keys:
+heroku keys:clear
+# Add a new SSH key to Heroku
+yes | heroku keys:add
+# Push to Heroku!
+yes | git push heroku master
