@@ -10,12 +10,12 @@ $(document).ready(function(){
         url: form.attr('action'),
         data: 'player0=' + player0 + '&player1=' + player1
       }).done(function(result){
-        $('#test').html(player0 +"'s move").attr('class', 'alert alert-success');
+        $('#messages').html(player0 +"'s move").attr('class', 'alert alert-success');
         $('.cell').html("&nbsp;");
         $('#btn').html("Restart Game")
         $('.overlay').remove();
       }).fail(function(){
-        $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
+        $('#messages').html('An error occurred.').attr('class', 'alert alert-danger');
       });
     }
     e.preventDefault();
@@ -31,7 +31,7 @@ $(document).ready(function(){
         url: "/click",
         data: 'cell=' + (this.id)
         }).done(function(result){
-        $('#test').html(result.substring(3)).attr('class', 'alert alert-success');
+        $('#messages').html(result.substring(3)).attr('class', 'alert alert-success');
         $('#cell'+ result[1]).text(result[2]);
         if(result[0] == "F")
         {
@@ -39,7 +39,7 @@ $(document).ready(function(){
           $(overlay).appendTo('#gameboard');
         }
         }).fail(function(){
-        $('#test').html('An error occurred.').attr('class', 'alert alert-danger');
+        $('#messages').html('An error occurred.').attr('class', 'alert alert-danger');
         });
     }
   });
