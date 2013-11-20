@@ -28,7 +28,7 @@ table.tictactoe {
     position: relative;
     display: inline-block;
     left: 32%;
-    margin-top: 150px;
+    margin-top: 20px;
 
 }
 #gameboard .overlay {
@@ -48,4 +48,15 @@ table.tictactoe {
     font-size: 2em;
     font-weight: bolder;
     color: #fff;    
+}
+.alert-danger{
+    width: 300px;
+    text-align: center;
+    margin-left: 33.2%;
+    margin: 0px;
+}
+.btn{
+    position: fixed;
+    top: 70%;
+    right: 49.3%;
 }
