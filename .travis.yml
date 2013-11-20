@@ -2,7 +2,7 @@ language: java
 jdk: oraclejdk7
 deploy:
   provider: heroku
-  api_key:
+  api_key: 1f97de6c-ab47-41a1-974d-f9fc84f69674
     secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
   app: ajtictac-staging
   on:
