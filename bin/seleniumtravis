@@ -1,6 +1,11 @@
 #!/bin/bash
 echo "-> SELENIUM TEST IN PROGRESS <-"
 export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'
-#mvn test-compile failsafe:integration-test failsafe:verify
-mvn verify
-echo "-> selenium test done <-"
+mvn test-compile failsafe:integration-test failsafe:verify
+
+if[ $? -eq 0 ]
+then
+  exit 0
+else
+  exit -1
+fi 
