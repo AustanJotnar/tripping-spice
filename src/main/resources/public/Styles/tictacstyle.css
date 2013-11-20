@@ -27,7 +27,9 @@ table.tictactoe {
 #gameboard {
     position: relative;
     display: inline-block;
-    left: 25%;
+    left: 32%;
+    margin-top: 150px;
+
 }
 #gameboard .overlay {
     position: absolute;
