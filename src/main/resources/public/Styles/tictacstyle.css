@@ -27,7 +27,7 @@ table.tictactoe {
 #gameboard {
     position: relative;
     display: inline-block;
-    left: 32%;
+    left: 2.5%;
     margin-top: 20px;
 
 }
@@ -52,11 +52,27 @@ table.tictactoe {
 .alert{
     width: 300px;
     text-align: center;
-    margin-left: 33.2%;
     margin: 0px;
+    position: relative;
+    left: 4%;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 .btn{
-   /* position: fixed;
-    top: 70%;
-    right: 49.3%;*/
+    position: relative;
+    left: 35%;
+}
+#form{
+    width: 400px
+}
+.container{
+    position: relative;
+    left: 25%;
+}
+h1
+{
+    width: 400px;
+    text-align: center;
+    letter-spacing: 0.5em;
 }
