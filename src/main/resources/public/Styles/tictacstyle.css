@@ -42,7 +42,7 @@ table.tictactoe {
     height: 340px;
     width: 340px;
     text-align: center;
-    padding: 40% 0;
+    padding: 25% 0;
 }
 #gameboard .overlay p {
     font-size: 2em;
