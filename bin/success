@@ -5,7 +5,7 @@ gem install heroku
 # Add your Heroku git repo:
 git remote add heroku git@heroku.com:ajtictac.git
 # Add your Heroku API key:
-export HEROKU_API_KEY=485d645f-40af-45eb-b912-7dacd5102ffc
+export HEROKU_API_KEY=1f97de6c-ab47-41a1-974d-f9fc84f69674
 # Turn off warnings about SSH keys:
 echo "Host heroku.com" >> ~/.ssh/config
 echo "   StrictHostKeyChecking no" >> ~/.ssh/config
@@ -16,5 +16,5 @@ heroku keys:clear
 # Add a new SSH key to Heroku
 yes | heroku keys:add
 # Push to Heroku!
-git pull
+git 
 yes | git push heroku master
