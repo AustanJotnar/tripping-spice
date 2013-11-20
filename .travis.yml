@@ -7,8 +7,10 @@ deploy:
   app: ajtictac-staging
   on:
     repo: AustanJotnar/tripping-spice
-before_install:
-- "sh bin/success"
+#install:
+#  - mvn install -Dmaven.test.skip.integration.tests
+after_install:
+  - "sh bin/success"
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
