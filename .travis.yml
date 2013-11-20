@@ -19,6 +19,12 @@ before_script:
 script:
 #
 after_deploy:
+  provider: heroku
+  api_key:
+    secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
+  app: ajtictac
+  on:
+    repo: AustanJotnar/tripping-spice
   - "sh bin/seleniumtravis"
   - "sh -e bin/success"
 after_script:
