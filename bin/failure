@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "After failure script running -> Some unknown ERROR"
+echo "-> The staging server test failed <-" #TODO Tell Travis-CI that the test failed

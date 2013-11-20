@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "After success script"
+echo "-> The staging server test is a success <-" #TODO implement deploy to pruduction script
