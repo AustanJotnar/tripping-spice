@@ -1,2 +1,3 @@
 #!/bin/bash
 echo "-> The staging server test failed <-" #TODO Tell Travis-CI that the test failed
+mvn verify
