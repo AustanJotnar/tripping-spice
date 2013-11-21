@@ -12,7 +12,7 @@ deploy:
 #install:
 #  - mvn install -Dmaven.test.skip.integration.tests
 before_install:
- -${skip.integration.tests=true}
+ - skip.integration.tests=$"true"
  # - "sh bin/success"
 before_script:
   - "export DISPLAY=:it99.0"
