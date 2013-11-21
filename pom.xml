@@ -33,9 +33,9 @@
       <version>2.37.1</version>
     </dependency>
     <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-firefox-driver</artifactId>
-        <version>2.37.1</version>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-firefox-driver</artifactId>
+      <version>2.37.1</version>
     </dependency> 
   </dependencies>
 
@@ -155,6 +155,9 @@
                 is true
               -->
               <skipTests>${skip.integration.tests}</skipTests>
+               <excludes>
+              <exclude>**IT*.java</exclude>
+            </excludes>
             </configuration>
           </execution>
         </executions>
