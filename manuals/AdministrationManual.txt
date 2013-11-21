@@ -10,7 +10,7 @@ Install mvn
 	sudo apt-get install maven
 
 Heroku account
-	Go to http://heroku.com and create an account.
+	Navigate to http://heroku.com and create an account.
 
 Heroku toolbelt
 	Install:
@@ -45,6 +45,26 @@ Travis tool
 
 	sudo gem1.9.1 install travis/
 
+Fork and clone repoository from github
+	Log in to GitHub.
+	Fork https://github.com/AustanJotnar/tripping-spice/
+
+	Navigate to your install directory.
+
+	Clone your new repository:
+	git clone git@github.com:<Your_SSH_clone_URL>
+
+Make a hook to Travis-CI on Github
+	Log in to GitHub.
+	Navigate to the new repository.
+	Navigate to Settings.
+	Navigate to Service Hooks.
+	Navigate to Travis and follow instructions on GitHub page.
+
+	You have now set up a hook to your new GitHub repository.
+
+Make changes to .travis.yml for your Heroku Apps.
+
 	First of all, you have to get your auth token from Heroku :
 	
 	token=$(heroku auth:token)
@@ -61,11 +81,9 @@ Travis tool
 	
 	Running the above command will add your encrypted token to your .travis.yml.
 
-Clone Repoository from github
-	Go to your install directory.
+	Make changes to your .travis.yml for your heroku apps.
 
-	Clone repository:
-	git clone git@github.com:AustanJotnar/tripping-spice.git
+Do some changes and push to github and it will deploy to your production server.
 
 
 
