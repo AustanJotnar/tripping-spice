@@ -1,7 +1,7 @@
 language: java
 jdk: oraclejdk7
-#install:
-#  - mvn install -Dskip.integration.tests=true -Dskip.unit.tests=true -Dskip.pre.unit.test=true -Dskip.post.unit.test=true
+install:
+ -gem install selenium-webdriver
 deploy:
   provider: heroku
   api_key: 
@@ -12,7 +12,7 @@ deploy:
 #install:
 #  - mvn install -Dmaven.test.skip.integration.tests
 before_install:
- - CI=true
+ #- CI=true
  # - "sh bin/success"
 before_script:
   - "export DISPLAY=:it99.0"
