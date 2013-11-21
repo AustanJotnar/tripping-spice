@@ -2,3 +2,4 @@
 
 mvn clean package
 mvn site
+firefox target/site/jacoco/index.html target/site/checkstyle.html
