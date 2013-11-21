@@ -9,6 +9,9 @@ Install git
 Install mvn
 	sudo apt-get install maven
 
+Heroku account
+	Go to http://heroku.com and create an account.
+
 Heroku toolbelt
 	Install:
 	wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
