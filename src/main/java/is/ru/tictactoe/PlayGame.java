@@ -45,7 +45,8 @@ public class PlayGame
 		post(new Route("/add") 
 		{
              @Override
-             public Object handle(Request request, Response response) {
+             public Object handle(Request request, Response response) 
+             {
                 
                 String name0 = (String.valueOf(request.queryParams("player0")));
 				String name1 = (String.valueOf(request.queryParams("player1")));
@@ -75,7 +76,8 @@ public class PlayGame
 		post(new Route("/click") 
 		{
              @Override
-             public Object handle(Request request, Response response) {
+             public Object handle(Request request, Response response) 
+             {
                 
                 if(game.getActivePlayer() != null)
                 {	
