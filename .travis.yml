@@ -21,9 +21,9 @@ before_install:
 - echo "   CheckHostIP no" >> ~/.ssh/config
 - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 - yes | heroku keys:add
-- heroku create
+#- heroku create
 #- git fetch git@github.com:AustanJotnar/tripping-spice.git -y
-- yes | git push heroku master
+- yes | git push -f heroku master
 before_script:
 - export DISPLAY=:it99.0
 - sh -e /etc/init.d/xvfb start
