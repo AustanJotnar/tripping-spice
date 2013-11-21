@@ -3,7 +3,7 @@ language: java
 jdk: oraclejdk7
 env: 
   global: 
-    secure: YOUR_ENCRYPTED_TOKEN
+    secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
 notifications:
   email: false
 #- gem update # optional, update all gems
