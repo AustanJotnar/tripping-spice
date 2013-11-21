@@ -1,6 +1,8 @@
 make user with sudo rights
 install git
 install mvn
+install gem
+install travis tool
 clone/fork rep
 
 Heroku setup heroku.com
