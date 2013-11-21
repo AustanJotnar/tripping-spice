@@ -2,7 +2,6 @@ language: java
 jdk: oraclejdk7
 install:
   - mvn install -Dskip.integration.tests=true -Dskip.unit.tests=true -Dskip.pre.unit.test=true -Dskip.post.unit.test=true
-  skip.integration.tests
 deploy:
   provider: heroku
   api_key: 
@@ -16,7 +15,7 @@ before_install:
  -Dskip.integration.tests=true -skip.integration.tests=true
  # - "sh bin/success"
 before_script:
-  - "export DISPLAY=:99.0"
+  - "export DISPLAY=:it99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 script:
