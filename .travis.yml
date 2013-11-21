@@ -4,8 +4,12 @@ jdk: oraclejdk7
 notifications:
   email: false
 install:
- - gem install selenium-webdriver
- - mvn install - Dskip.integration.tests=true - Dskip.unit.tests=true - Dskip.pre.unit.test=true - Dskip.post.unit.test=true
+# Get Xvfb and Firefox
+ - sudo apt-get install -y xvfb firefox
+# Install Xvfb packages
+- sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
+- gem install selenium-webdriver
+ #- mvn install - Dskip.integration.tests=true - Dskip.unit.tests=true - Dskip.pre.unit.test=true - Dskip.post.unit.test=true
 deploy:
   provider: heroku
   api_key: 
