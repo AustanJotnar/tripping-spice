@@ -2,7 +2,8 @@
 # TicTacToe Administration Manual #
 ###################################
 
-make user with sudo rights
+Create user with sudo rigths
+	useradd -G {sudo} username
 Install git
 	sudo apt-get install git
 
@@ -37,7 +38,8 @@ Heroku toolbelt
 
 Install gem
 	Install ruby1.9.1-dev and update make
-	sudo apt-get install -y make ruby1.9.1-dev
+		suto apt-get update
+		sudo apt-get install -y make ruby1.9.1-dev
 
 Travis tool
 	Install:
