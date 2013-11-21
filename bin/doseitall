@@ -6,6 +6,6 @@ bin/run start
 bin/unit_test
 bin/selenium_test
 bin/ccunittest
-firefox  target/site/jacoco-ut/index.html
+firefox target/site/jacoco/index.html
 bin/run stop
 echo "Finished running all the crap" 
