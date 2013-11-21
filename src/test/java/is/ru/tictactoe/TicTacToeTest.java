@@ -67,5 +67,16 @@ public class TicTacToeTest
         int test = game.checkForWinner();
         assertEquals(3, test);
     }
+    
+    @Test
+    public void testAddPlayers()
+    {
+        game.addPlayers(p1, p2);    
+        assertEquals("Alice" , p1.getName());
+        assertEquals("Bob", p2.getName());
+        assertEquals(0, p1.getId());
+        assertEquals(1, p2.getId());
+    }   
+
 }
 

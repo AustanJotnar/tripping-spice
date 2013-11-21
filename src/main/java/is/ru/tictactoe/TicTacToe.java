@@ -107,14 +107,5 @@ public class TicTacToe
             return 0;
         }
     }
-    public static void main(String[] args) 
-    {
-        Player p1 = new Player(0, "Alice");
-        Player p2 = new Player(1, "Bob");
-
-		TicTacToe game = new TicTacToe(p1, p2);    
-		
-	    System.out.println("TicTacToe");  
-    }
 }
 
