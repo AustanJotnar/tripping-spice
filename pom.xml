@@ -135,33 +135,6 @@
             </dependency>
           </dependencies>
         </plugin>
-        <plugin>
-          <!-- Failsafe plugin handles all tests except unit test -->
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.16</version>
-          <executions>
-            <execution>
-              <goals>
-                <!-- Run during these phases; integration-test and verify -->
-                <goal>integration-test</goal>
-                <goal>verify</goal>
-              </goals>
-              <configuration>
-                <!-- Sets the VM argument line used when integration tests are run. -->
-                <argLine>${failsafeArgLine}</argLine>
-            <!--
-                Skips integration tests if the value of skip.integration.tests property
-                is true
-              -->
-              <skipTests>${skip.integration.tests}</skipTests>
-               <excludes>
-              <exclude>**IT*.java</exclude>
-            </excludes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
