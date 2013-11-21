@@ -1,13 +1,68 @@
-make user with sudo rights
-install git
-install mvn
-install gem
-install travis tool
-clone/fork rep
+###################################
+# TicTacToe Administration Manual #
+###################################
 
-Heroku setup heroku.com
+make user with sudo rights
+Install git
+	sudo apt-get install git
+
+Install mvn
+	sudo apt-get install maven
+
 Heroku toolbelt
-Install ruby1.9.1-dev and update make
-sudo apt-get install -y make ruby1.9.1-dev
-3. Use gem1.9.1 to install travis
-sudo gem1.9.1 install travis
+	Install:
+	wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+	Once installed, you'll have access to the heroku command from your command shell. Log in using the email address and password you used when creating your Heroku account:
+	
+	$ heroku login
+	Enter your Heroku credentials.
+	Email: adam@example.com
+	Password:
+	Could not find an existing public key.
+	Would you like to generate one? [Yn]
+	Generating new SSH public key.
+	Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
+
+	You're now ready to create your first Heroku app:
+
+	$ cd ~/myapp
+	$ heroku create
+	Creating stark-fog-398... done, stack is cedar
+	http://stark-fog-398.herokuapp.com/ | git@heroku.com:stark-fog-398.git
+	Git remote heroku added
+
+Install gem
+	Install ruby1.9.1-dev and update make
+	sudo apt-get install -y make ruby1.9.1-dev
+
+Travis tool
+	Install:
+	Use gem1.9.1 to install travis
+
+	sudo gem1.9.1 install travis/
+
+	First of all, you have to get your auth token from Heroku :
+	
+	token=$(heroku auth:token)
+
+	This will store the token, and keep it for later.
+
+	Then, install the Travis CLI tool:
+
+	sudo gem install travis
+
+	You now have the Travis CLI tool installed. This will help you to encrypt your Heroku token.
+	
+	travis encrypt HEROKU_API_KEY=$token --add
+	
+	Running the above command will add your encrypted token to your .travis.yml.
+
+Clone Repoository from github
+	Go to your install directory.
+
+	Clone repository:
+	git clone git@github.com:AustanJotnar/tripping-spice.git
+
+
+

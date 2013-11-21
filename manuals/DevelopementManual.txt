@@ -1,4 +1,6 @@
---Development Manual--
+#################################
+# TicTacToe Developement Manual #
+#################################
 
 Follow these steps to set up our source control and build environment
 
