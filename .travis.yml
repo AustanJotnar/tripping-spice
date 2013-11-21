@@ -21,6 +21,7 @@ before_install:
 - echo "   CheckHostIP no" >> ~/.ssh/config
 - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 - yes | heroku keys:add
+- git pull
 - yes | git push heroku master
 before_script:
 - export DISPLAY=:it99.0
