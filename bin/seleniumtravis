@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "-> SELENIUM TEST IN PROGRESS!!! <-"
 export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'
+export DISPLAY=:it99.0
 mvn test-compile failsafe:integration-test failsafe:verify
 if [ $? -eq 0 ]
   then
