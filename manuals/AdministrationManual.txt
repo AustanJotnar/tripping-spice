@@ -38,7 +38,7 @@ Heroku toolbelt
 
 Install gem
 	Install ruby1.9.1-dev and update make
-		suto apt-get update
+		sudo apt-get update
 		sudo apt-get install -y make ruby1.9.1-dev
 
 Travis tool
@@ -47,7 +47,7 @@ Travis tool
 
 	sudo gem1.9.1 install travis/
 
-Fork and clone repoository from github
+Fork and clone repository from github
 	Log in to GitHub.
 	Fork https://github.com/AustanJotnar/tripping-spice/
 
@@ -71,7 +71,7 @@ Make changes to .travis.yml for your Heroku Apps.
 	
 	token=$(heroku auth:token)
 
-	This will store the token, and keep it for later.
+	This will store the token, and keep it for later use.
 
 	Then, install the Travis CLI tool:
 
