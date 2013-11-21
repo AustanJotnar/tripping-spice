@@ -1,6 +1,9 @@
 #http://stackoverflow.com/questions/17117589/how-can-i-skip-tests-in-maven-install-goal-while-running-them-in-maven-test-goa
 language: java
 jdk: oraclejdk7
+env: 
+  global: 
+    secure: YOUR_ENCRYPTED_TOKEN
 notifications:
   email: false
 #- gem update # optional, update all gems
@@ -20,7 +23,14 @@ deploy:
 #install:
 #  - mvn install -Dmaven.test.skip.integration.tests
 before_install:
-#
+ - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+ - git remote add heroku git@heroku.com:ajtictac.git
+ - echo "Host heroku.com" >> ~/.ssh/config
+ - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+ - echo "   CheckHostIP no" >> ~/.ssh/config
+ - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+ - yes | heroku keys:add
+ - yes | git push heroku master
 before_script:
   - "export DISPLAY=:it99.0"
   - "sh -e /etc/init.d/xvfb start"  
