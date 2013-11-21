@@ -4,8 +4,8 @@ jdk: oraclejdk7
 notifications:
   email: false
 install:
-- apt-get install -y xvfb firefox
-- apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
+- sudo apt-get install -y xvfb firefox
+- sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
 - gem install selenium-webdriver
  #- mvn install - Dskip.integration.tests=true - Dskip.unit.tests=true - Dskip.pre.unit.test=true - Dskip.post.unit.test=true
 deploy:
