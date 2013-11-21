@@ -1,7 +1,7 @@
 language: java
 jdk: oraclejdk7
 install:
-  - mvn install -Dskip.integration.tests -Dskip.unit.tests -Dskip.pre.unit.test -Dskip.post.unit.test
+  - mvn install -Dskip.integration.tests=true -Dskip.unit.tests=true -Dskip.pre.unit.test=true -Dskip.post.unit.test=true
 deploy:
   provider: heroku
   api_key: 
