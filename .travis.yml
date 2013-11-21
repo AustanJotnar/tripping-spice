@@ -1,45 +1,36 @@
-#http://stackoverflow.com/questions/17117589/how-can-i-skip-tests-in-maven-install-goal-while-running-them-in-maven-test-goa
 language: java
 jdk: oraclejdk7
-env: 
-  global: 
-    secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
+env:
+  global:
+  - secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
+  - secure: SuQs1lHPpHyhi0UfL7r3kQBmDt0KvToGI8HkzVsoUDFp4Iil+Yw13j6baM39geVHFif8jpF8ecRoex3ECrCEUjFT7R+YRh2ClnRtQE/bdQocE4TWZghin78X6KyiGfJsGiCpLqdPq3FYWCBw8pdOlpqKRp1MHTlqDypHLe7feho=
 notifications:
   email: false
-#- gem update # optional, update all gems
-#- gem install selenium-webdriver
-#- sudo apt-get install -y xvfb firefox
-#- sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
-#- gem install selenium-webdriver
-#- "export DISPLAY=:it99.0"
- #- mvn install - Dskip.integration.tests=true - Dskip.unit.tests=true - Dskip.pre.unit.test=true - Dskip.post.unit.test=true
 deploy:
   provider: heroku
-  api_key: 
+  api_key:
     secure: Zd1tn08hEJadSVIdMqmNj90uUdrOLWVOnZyCcjoDNWkt5dA3S8eNpLv+PerrFVUeevSeQzYntgNUbvJo6vMJmoC2rXgkWgaIAbnSd1udIVmX9dsC36vmuEVxKDpcxbEuoxSuR4mlFgxNB5v6m/WChKahgnNXCqMbDkcvwUaIgw8=
   app: ajtictac-staging
   on:
     repo: AustanJotnar/tripping-spice
-#install:
-#  - mvn install -Dmaven.test.skip.integration.tests
 before_install:
- - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
- - git remote add heroku git@heroku.com:ajtictac.git
- - echo "Host heroku.com" >> ~/.ssh/config
- - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
- - echo "   CheckHostIP no" >> ~/.ssh/config
- - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
- - yes | heroku keys:add
- - yes | git push heroku master
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- git remote add heroku git@heroku.com:ajtictac.git
+- echo "Host heroku.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- yes | heroku keys:add
+- yes | git push heroku master
 before_script:
-  - "export DISPLAY=:it99.0"
-  - "sh -e /etc/init.d/xvfb start"  
-  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
-script:
-#
+- export DISPLAY=:it99.0
+- sh -e /etc/init.d/xvfb start
+- /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
+  --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
+script: 
 after_deploy:
- - "sh bin/seleniumtravis"
+- sh bin/seleniumtravis
 after_script:
-  - "sh -e /etc/init.d/xvfb stop"
+- sh -e /etc/init.d/xvfb stop
 after_failure:
-  - "sh -e /bin/failure"
+- sh -e /bin/failure
