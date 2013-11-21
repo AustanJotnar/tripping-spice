@@ -2,6 +2,7 @@ language: java
 jdk: oraclejdk7
 install:
   - mvn install -Dskip.integration.tests=true -Dskip.unit.tests=true -Dskip.pre.unit.test=true -Dskip.post.unit.test=true
+  skip.integration.tests
 deploy:
   provider: heroku
   api_key: 
@@ -11,7 +12,8 @@ deploy:
     repo: AustanJotnar/tripping-spice
 #install:
 #  - mvn install -Dmaven.test.skip.integration.tests
-#before_install:
+before_install:
+ -Dskip.integration.tests=true -skip.integration.tests=true
  # - "sh bin/success"
 before_script:
   - "export DISPLAY=:99.0"
