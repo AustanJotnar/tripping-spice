@@ -21,7 +21,8 @@ before_install:
 - echo "   CheckHostIP no" >> ~/.ssh/config
 - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 - yes | heroku keys:add
-- git fetch git@github.com:AustanJotnar/tripping-spice.git -y
+- heroku create
+#- git fetch git@github.com:AustanJotnar/tripping-spice.git -y
 - yes | git push heroku master
 before_script:
 - export DISPLAY=:it99.0
