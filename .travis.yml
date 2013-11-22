@@ -26,4 +26,4 @@ before_install:
 before_script:
 - export STAGING_SERVER='http://ajtictac-staging.herokuapp.com/'
 - mvn test-compile failsafe:integration-test failsafe:verify
-- sh -e /etc/init.d/xvfb stop
+#- sh -e /etc/init.d/xvfb stop
