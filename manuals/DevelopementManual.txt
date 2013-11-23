@@ -67,6 +67,6 @@ public class ExampleClass
 
 
 Before commiting any changes to github run:
-bin/ccunittest
+bin/doesitall
 
-It will check for errors, code coverage and coding rules.
+It will check for errors in code, test the webpage and check code coverage and coding rules.
