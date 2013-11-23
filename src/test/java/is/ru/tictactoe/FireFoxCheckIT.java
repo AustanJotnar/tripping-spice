@@ -24,12 +24,14 @@ public class FireFoxCheckIT {
 	@Test
 	public void testFireFoxTestTitleIT() throws Exception {
 		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
 		assertEquals("TicTacToe", selenium.getTitle());
 	}
 
 	@Test
 	public void testFireFoxTestWithNoPlayers() throws Exception {
 		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
 		selenium.click("id=cell0");
 		assertEquals("Add players to the game!", selenium.getText("id=messages"));
 	}
