@@ -1,9 +1,8 @@
  *----------------------------------------------------------------------*
- *					TicTacToe Administration Manual 					*
- *					Requierments to 
+ *			TicTacToe Administration Manual			*
+ *					 				*
  *----------------------------------------------------------------------*
-RedBull user
-Energy pass
+
 Update Ubuntu
 	$ sudo apt-get install
 	$ sudo apt-get upgrade
@@ -29,16 +28,17 @@ Fork and clone repository from github
 	Clone your new repository:
 	git clone git@github.com:<Your_SSH_clone_URL>
  *----------------------------------------------------------------------*
- *				     Heroku account and Travis-CI 				     	* 
- *			      If you want to deploy app to heroku 	 			 	*
- *						 {optional -Start}						 		*
+ *			Heroku account and Travis-C			* 
+ *	       	If you want to deploy app to heroku 			*
+ *			{ Optional -Start }			 	*					 		
  *----------------------------------------------------------------------*
 Navigate to http://heroku.com and create an account.	
 Heroku toolbelt 
 	Install:
 	$ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-		Once installed, you'll have access to the heroku command from your command shell. Log in using the email address and password you used when creating your Heroku account:
+		Once installed, you'll have access to the heroku command from your command shell. 
+		Log in using the email address and password you used when creating your Heroku account:
 	
 	$ heroku login
 		Enter your Heroku credentials.
@@ -89,7 +89,8 @@ Make changes to .travis.yml for your Heroku Apps.
 
 		$sudo gem install travis
 
-	You now have the Travis CLI tool installed. This will help you to encrypt your Heroku token.
+	You now have the Travis CLI tool installed. 
+	This will help you to encrypt your Heroku token.
 	
 	travis encrypt HEROKU_API_KEY=$token --add
 	
@@ -98,6 +99,7 @@ Make changes to .travis.yml for your Heroku Apps.
 	Make changes to your .travis.yml for your heroku apps.
 
 Do some changes and push to github and it will deploy to your production server.
+
 *---------------------{optional - End}---------------------------------*
 
 
