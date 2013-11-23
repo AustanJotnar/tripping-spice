@@ -29,26 +29,6 @@ public class FireFoxCheckIT {
 	}
 
 	@Test
-	public void testFireFoxTestWithNoPlayers() throws Exception {
-		selenium.open("/");
-		selenium.waitForPageToLoad("30000");
-		selenium.click("id=cell0");
-		assertEquals("Add players to the game!", selenium.getText("id=messages"));
-	}
-
-	@Test
-	public void testFireFoxTestButton() throws Exception {
-		selenium.open("/");
-		selenium.waitForPageToLoad("30000");
-		assertEquals("Start Playing", selenium.getText("id=btn"));
-		selenium.type("id=player0", "Simon");
-		selenium.type("id=player1", "Bob");
-		selenium.click("css=button.btn.btn-default");
-		assertEquals("Restart Game", selenium.getText("id=btn"));
-	}
-
-
-	@Test
 	public void testFireFoxCheckForWinnerIT() throws Exception {
 		selenium.open("/");
 		selenium.waitForPageToLoad("30000");
@@ -60,7 +40,6 @@ public class FireFoxCheckIT {
 		selenium.click("id=cell0");
 		selenium.click("id=cell4");
 		selenium.click("id=cell6");
-		Thread.sleep(1000);
 		assertEquals("Simon won!", selenium.getText("id=messages"));
 	}
 
@@ -77,9 +56,7 @@ public class FireFoxCheckIT {
 		selenium.click("id=cell3");
 		selenium.click("id=cell8");
 		selenium.click("id=cell6");
-		Thread.sleep(1000);
-		String winmessages = "Finished\nBob won!\nClick \"Restart Game\" to play again.";
-		assertEquals(winmessages, selenium.getText("class=overlay"));
+		assertEquals("Bob won!", selenium.getText("id=messages"));
 		selenium.click("css=button.btn.btn-default");
 		selenium.click("id=cell3");
 		selenium.click("id=cell1");
@@ -90,8 +67,7 @@ public class FireFoxCheckIT {
 		selenium.click("id=cell7");
 		selenium.click("id=cell8");
 		selenium.click("id=cell2");
-		String drawmessages = "Finished\nIt's a draw!\nClick \"Restart Game\" to play again.";
-		assertEquals(drawmessages, selenium.getText("class=overlay"));
+		assertEquals("It's a draw!", selenium.getText("id=messages"));
 	}
 
 	

@@ -1,26 +1,44 @@
-###########################
-# TicTacToe Design Report #
-###########################
+/**********************************************************************
+ *  DesignReport.txt                                        
+ *  TicTacTacToe
+**********************************************************************/
 
-Design of TicTacToe
+/**********************************************************************
+ * Overview
+ **********************************************************************/
+ In this project we implemented a web based version of the game TicTacToe using test driven developement. Git was used for revision control. In our approach we applied continuous integration. Heroku provided staging- and production servers and Travis CI was employed for continuous integration service.
 
-Introduction
+ /**********************************************************************
+ * Production life cycle
+ **********************************************************************/
+ Description of the production life cycle:
+ 
+ 1. Product changes are pushed to Git.
+
+ 2. Hook on Git to Travis CI starts the continuous integration service. Travis CI clones the repo and pushes it as a slug to Heroku staging server.
+
+ 3. Unit- and integration tests are run against the staging server. On succces the Travis CI pushes a new slug on Heroku production server. On failure the nothing is depoyed on Heroku production server.
+
+ 4. Travis CI sends an e-mail to the developer who initiated the product changes on failure (either in build or testing). E-mail is also sent on the next successful deployment after failure. 
 
 
-Design
+/**********************************************************************
+ * Design
+ **********************************************************************/ 
+1. Overview of classes and methods
 
-	Classes
-		TicTacToe
-			Properties
-				Player activePlayer
-					Active player at this time of the game.
+Classes
+	TicTacToe
+		Properties
+			Player activePlayer
+				Active player at this time of the game.
     			
-    			Player player1
-    			Player player2
-    				Players in the game.
+    		Player player1
+    		Player player2
+    			Players in the game.
 
-       			GameBoard gameBoard
-       				Gameboard that belongs to current game.
+       		GameBoard gameBoard
+       			Gameboard that belongs to current game.
 			
 			Methods
 				Player getActivePlayer()
@@ -36,26 +54,25 @@ Design
 					Returns 2 if Player 2 has won.
 					Returns 3 if there is a draw
 
-		GameBoard
-			Properties
-				char[] board
-					This is the gameboard, it stores 'X', 'O'  or ' ' for empty field.
+	GameBoard
+		Properties
+			char[] board
+				This is the gameboard, it stores 'X', 'O'  or ' ' for empty field.
 					
-					Structure of the gameboard.
+				Structure of the gameboard.
 
-					0 | 1 | 2
-					---------
-					3 | 4 | 5
-					---------
-					6 | 7 | 8
+				0 | 1 | 2
+				---------
+				3 | 4 | 5
+				---------
+				6 | 7 | 8
 
-			Methods
-				char[] getBoard()
-					Returns the gameboard.
+		Methods
+			char[] getBoard()
+				Returns the gameboard.
 
-				int addToBoard(char token, int pos)
-					Adds tokens 'X' or 'O' to position pos on the gameboard if the position
-					is free and not out of bounds.  
+			int addToBoard(char token, int pos)
+				Adds tokens 'X' or 'O' to position pos on the gameboard if the position is free and not out of bounds.  
 
 				void resetBoard()
 					Resets the gameboard by Replacing all the tokens with space ' '. 
@@ -63,17 +80,16 @@ Design
 				boolean emptyCell(int c)
 					Returns true if cell at position c is empty else it returns false.
 
+	Player
+		Properties
+			int id
+				Id of the plaeyr, e.g. Player 1 or Player 2.
 
-		Player
-			Properties
-				int id
-					Id of the plaeyr, e.g. Player 1 or Player 2.
+			String name
+				Name of the player.
 
-				String name
-					Name of the player.
-
-				char token
-					The players token 'X' for player 1 'O' for player 2
+			char token
+				The players token 'X' for player 1 'O' for player 2
 
 			Methods
 				String getName()
@@ -85,36 +101,36 @@ Design
 				char getToken()
 					Returns the players token.
 
-		PlayGame
-			Properties
-				No properties. This class is for running the game.
+	PlayGame
+		Properties
+			No properties. This class is for running the game.
 
-			Methods
-				void play(TicTacToe game)
+		Methods
+			void play(TicTacToe game)
 
-				void main(String[] args)
-					Runs the game and interacts with web page.
+			void main(String[] args)
+				Runs the game and interacts with web page.
 
-	Developement
-		Description
-		TDD
-		Coding Rules
-		Easy setup - scripts
-		Developement Tools
+	
+/**********************************************************************
+ * Testing
+ **********************************************************************/ 
+Two types of testing are used in our TDD approach, unit tests and integration tests. The aim of the unit tests is to test the java code containing the game logic. Integration tests are for testing of the functionality, data integrity and the gameplay on the web page.
 
-	Servers
-		Integration Server
-			Automatic integration
-				Travis
-			Manual Integration
-				46.149.29.104
+/**********************************************************************
+ * Code coverage and code inspection
+ **********************************************************************/ 
+1. Code coverage
+To check the code coverage for unit tests the jacoco plugin for maven is employed. Jacoco generates code coverage report that shows in what degree the unit tests cover the code written.
 
-		Staging Server
-			https://ajtictac.herokuapp.com
-		
-		Production Server
-			
-	Testing
-		Unit Test
-		Selenium Test
+2. Code inpspection
+The maven checkstyle plugin tests the java code against the programming style we agreed upon.
+
+/**********************************************************************
+ * Conclusion
+ **********************************************************************/
+ We believe tha the artifacts of the project met the requirements set forth in the problem description. 
+
+
+
 
