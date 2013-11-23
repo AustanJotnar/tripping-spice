@@ -68,4 +68,5 @@ public class ExampleClass
 
 Before commiting any changes to github run:
 bin/ccunittest
+
 It will check for errors, code coverage and coding rules.
