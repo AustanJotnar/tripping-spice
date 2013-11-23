@@ -67,7 +67,7 @@ public class FireFoxCheckIT {
 		selenium.click("id=cell7");
 		selenium.click("id=cell8");
 		selenium.click("id=cell2");
-		assertEquals("It's a draw", selenium.getText("id=messages"));
+		assertEquals("It's a draw!", selenium.getText("id=messages"));
 	}
 
 	
