@@ -22,24 +22,12 @@ public class FireFoxCheckIT {
 	}
 
 	@Test
-	public void testFireFoxTestTitleIT() throws Exception {
+	public void testTitleEmptygameAndButtonIT() throws Exception {
 		selenium.open("/");
 		selenium.waitForPageToLoad("30000");
 		assertEquals("TicTacToe", selenium.getTitle());
-	}
-
-	@Test
-	public void testFireFoxTestWithNoPlayers() throws Exception {
-		selenium.open("/");
-		selenium.waitForPageToLoad("40000");
 		selenium.click("id=cell0");
 		assertEquals("Add players to the game!", selenium.getText("id=messages"));
-	}
-
-	@Test
-	public void testFireFoxTestButton() throws Exception {
-		selenium.open("/");
-		selenium.waitForPageToLoad("50000");
 		assertEquals("Start Playing", selenium.getText("id=btn"));
 		selenium.type("id=player0", "Simon");
 		selenium.type("id=player1", "Bob");
