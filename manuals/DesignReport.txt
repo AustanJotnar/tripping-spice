@@ -1,136 +1,104 @@
-/**********************************************************************
- *  DesignReport.txt                                        
- *  TicTacTacToe
-**********************************************************************/
+Design Report
 
-/**********************************************************************
- * Overview
- **********************************************************************/
- In this project we implemented a web based version of the game TicTacToe using test driven developement. Git was used for revision control. In our approach we applied continuous integration. Heroku provided staging- and production servers and Travis CI was employed for continuous integration service.
+Overview
 
- /**********************************************************************
- * Production life cycle
- **********************************************************************/
- Description of the production life cycle:
- 
- 1. Product changes are pushed to Git.
+This project is a school project for Software Engineering Seminar in Computer Science Department of Reykjavík University. This project implements a web based version of the game TicTacToe using test driven developement. Git is used for revision control. In this approach, continuous integration is applied. Heroku provides staging- and production servers and Travis CI is employed for continuous integration service.
 
- 2. Hook on Git to Travis CI starts the continuous integration service. Travis CI clones the repo and pushes it as a slug to Heroku staging server.
+Production life cycle
 
- 3. Unit- and integration tests are run against the staging server. On succces the Travis CI pushes a new slug on Heroku production server. On failure the nothing is depoyed on Heroku production server.
+Product changes are pushed to Git.
 
- 4. Travis CI sends an e-mail to the developer who initiated the product changes on failure (either in build or testing). E-mail is also sent on the next successful deployment after failure. 
+Hook on Git to Travis CI starts the continuous integration service. Travis CI clones the repository and pushes it to Heroku staging server.
 
+Unit- and integration tests are run against the staging server. On succces the Travis CI pushes a new slug on Heroku production server. On failure nothing is depoyed on Heroku production server.
 
-/**********************************************************************
- * Design
- **********************************************************************/ 
-1. Overview of classes and methods
+Travis CI sends an e-mail to the developer who initiated the product changes on failure (either in build or testing). E-mail is also sent on successful deployment.
 
-Classes
-	TicTacToe
-		Properties
-			Player activePlayer
-				Active player at this time of the game.
-    			
-    		Player player1
-    		Player player2
-    			Players in the game.
+Design
 
-       		GameBoard gameBoard
-       			Gameboard that belongs to current game.
-			
-			Methods
-				Player getActivePlayer()
-					Returns the Active Player.
+Here you can read about the design of the game.
 
-				void switchPlayer()
-					Switches which players is has move.
+Overview of classes and methods
 
-				int checkForWinner()
-					Checks status of the game.
-					Returns 0 if there is no result yet.
-					Returns 1 if Player 1 has won.
-					Returns 2 if Player 2 has won.
-					Returns 3 if there is a draw
+Class - TicTacToe
 
-	GameBoard
-		Properties
-			char[] board
-				This is the gameboard, it stores 'X', 'O'  or ' ' for empty field.
-					
-				Structure of the gameboard.
+This class is the main class of the game and holds the game logic.
 
-				0 | 1 | 2
-				---------
-				3 | 4 | 5
-				---------
-				6 | 7 | 8
+Properties
 
-		Methods
-			char[] getBoard()
-				Returns the gameboard.
+Player activePlayer - Active player at this time of the game.
+Player player1 - Player 2 in the game.
+Player player2 - Player 2 in the game.    
+GameBoard gameBoard -Gameboard that belongs to current game.
+Methods
 
-			int addToBoard(char token, int pos)
-				Adds tokens 'X' or 'O' to position pos on the gameboard if the position is free and not out of bounds.  
+void addPlayers(Player p1, Player p2) - Adds new players to new gameBoard.
+Player getPlayer(int player) - Returns players by id.
+                               Returns Player 1 if the input is 0.
+                               Returns Player 2 if the input is 1.
+Player getActivePlayer() - Returns the Active Player.
+void switchPlayer() - Switches which players is has move.
+int checkForWinner() - Checks status of the game.   
+                       Returns 0 if there is no result yet.
+                       Returns 1 if Player 1 has won.
+                       Returns 2 if Player 2 has won.
+                       Returns 3 if there is a draw
+Class - GameBoard
 
-				void resetBoard()
-					Resets the gameboard by Replacing all the tokens with space ' '. 
+This class holds the gameboard and logic related to the gameboard.
 
-				boolean emptyCell(int c)
-					Returns true if cell at position c is empty else it returns false.
+Properties
 
-	Player
-		Properties
-			int id
-				Id of the plaeyr, e.g. Player 1 or Player 2.
+char[] board - This is the gameboard, it stores 'X', 'O'  or ' ' for empty field.
+               Structure of the gameboard.
+               0 | 1 | 2
+               ---------
+               3 | 4 | 5
+               ---------
+               6 | 7 | 8
+Methods
 
-			String name
-				Name of the player.
+char[] getBoard() - Returns the gameboard.
+int addToBoard(char token, int pos) - Adds tokens 'X' or 'O' to position pos 
+                                      on the gameboard if the position is 
+                                      free and not out of bounds.  
+void resetBoard() - Resets the gameboard by Replacing all the tokens with space ' '. 
+boolean emptyCell(int c) - Returns true if cell at position c is empty else it returns false.
+Class - Player
 
-			char token
-				The players token 'X' for player 1 'O' for player 2
+This class holds each player and logic related to players.
 
-			Methods
-				String getName()
-					Returns the name of the player.
+Properties
 
-				int getId()
-					Returns the players id.
+int id - Id of the plaeyr, e.g. Player 1 or Player 2.
+String name - Name of the player.
+char token - The players token 'X' for player 1 'O' for player 2
+Methods
 
-				char getToken()
-					Returns the players token.
+void setToken(int playerId) - Sets token to 'X' if input is 0 and to 'O' if input is 1
+void setId(int playerId) - Sets new Id to player.
+void setName(String playerName) - Sets new name to Player
+String getName() - Returns the name of the player.
+int getId() - Returns the players id.
+char getToken() - Returns the players token.
+Class - PlayGame
 
-	PlayGame
-		Properties
-			No properties. This class is for running the game.
+This class is for running the game.
 
-		Methods
-			void play(TicTacToe game)
+Methods
 
-			void main(String[] args)
-				Runs the game and interacts with web page.
+void play(TicTacToe game) - Runs the game
+void main(String[] args) - Runs the game and interacts with web app.
+Testing
 
-	
-/**********************************************************************
- * Testing
- **********************************************************************/ 
-Two types of testing are used in our TDD approach, unit tests and integration tests. The aim of the unit tests is to test the java code containing the game logic. Integration tests are for testing of the functionality, data integrity and the gameplay on the web page.
+Two types of testing are used in this TDD approach, unit tests and integration tests. The aim of the unit tests is to test the java code containing the game logic. Integration tests are for testing of the functionality, data integrity and the gameplay on the web page.
 
-/**********************************************************************
- * Code coverage and code inspection
- **********************************************************************/ 
-1. Code coverage
-To check the code coverage for unit tests the jacoco plugin for maven is employed. Jacoco generates code coverage report that shows in what degree the unit tests cover the code written.
+Code coverage and code inspection
 
-2. Code inpspection
-The maven checkstyle plugin tests the java code against the programming style we agreed upon.
+Code coverage To check the code coverage for unit tests the jacoco plugin for maven is employed. Jacoco generates code coverage report that shows in what degree the unit tests cover the code written.
 
-/**********************************************************************
- * Conclusion
- **********************************************************************/
- We believe tha the artifacts of the project met the requirements set forth in the problem description. 
+Code inpspection The maven checkstyle plugin tests the java code against the programming style we agreed upon. The maven checkstyle plugin generates code coverage report that shows the code has broken the pre-defined coding style..
 
+Conclusion
 
-
-
+We believe that the artifacts of the project met the requirements set forth in the problem description.

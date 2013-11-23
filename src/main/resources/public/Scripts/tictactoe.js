@@ -1,6 +1,6 @@
 $(document).ready(function(){
   // Hide the gameboard
-  //$('#game-layout').hide();
+  $('#game-layout').hide();
 
   var form = $('form');
   form.submit(function(e){
@@ -14,12 +14,12 @@ $(document).ready(function(){
         data: 'player0=' + player0 + '&player1=' + player1
       }).done(function(result){
         // Show the gameboard
-        //$('#game-layout').fadeIn();
+        $('#game-layout').fadeIn();
         $('#messages').html(player0 +"'s move").attr('class', 'alert alert-success');
         $('.cell').html("&nbsp;");
         $('#btn').html("Restart Game");
         $('.overlay').remove();
-        //$('form').fadeOut();
+        $('form').fadeOut();
       }).fail(function(){
         $('#messages').html('An error occurred.').attr('class', 'alert alert-danger');
       });
@@ -42,7 +42,7 @@ $(document).ready(function(){
         {
           var overlay = $('<div/>').addClass('overlay').append($('<p/>').text('Finished')).append($('<p/>').text(result.substring(3))).append($('<p/>').text('Click "Restart Game" to play again.'));
           $(overlay).appendTo('#gameboard');
-          //$('form').fadeIn();
+          $('form').fadeIn();
         }
       }).fail(function(){
         $('#messages').html('An error occurred.').attr('class', 'alert alert-danger');

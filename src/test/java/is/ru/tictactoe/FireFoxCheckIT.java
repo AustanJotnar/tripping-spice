@@ -40,61 +40,53 @@ public class FireFoxCheckIT {
 		selenium.waitForPageToLoad("30000");
 		selenium.type("id=player0", "Simon");
 		selenium.type("id=player1", "Bob");
-		selenium.click("css=button.btn.btn-default");
+		selenium.click("id=btn");
+		// Wait for '#game-layout' to appear
+		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#game-layout")));
 		selenium.click("id=cell3");
 		selenium.click("id=cell1");
 		selenium.click("id=cell0");
 		selenium.click("id=cell4");
 		selenium.click("id=cell6");
-		/*driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 4);
-		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("overlay")));
-		assertEquals("Simon won!", element.getText());
-		/*
-		WebDriverWait wait = new WebDriverWait(driver, 2);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("messages")));
-		assertEquals("Simon won!", element.getText());
 
-		WebDriver driver = new FirefoxDriver();
-		driver.get("http://somedomain/url_that_delays_loading");
-		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("myDynamicElement")));
-		*/
-		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
+		// Wait for '.overlay' to appear
+		myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
 		assertEquals("Simon won!", selenium.getText("id=messages"));
 	}
 
-//	@Test
-//	public void testFireFoxCheckForWinnerAndDrawIT() throws Exception {
-//		selenium.open("/");
-//		selenium.waitForPageToLoad("30000");
-//		selenium.type("id=player0", "Simon");
-//		selenium.type("id=player1", "Bob");
-//		selenium.click("css=button.btn.btn-default");
-//		selenium.click("id=cell2");
-//		selenium.click("id=cell0");
-//		selenium.click("id=cell1");
-//		selenium.click("id=cell3");
-//		selenium.click("id=cell8");
-//		selenium.click("id=cell6");
-//		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
-//		assertEquals("Bob won!", selenium.getText("id=messages"));
-//		/*driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-//		assertEquals("Bob won!", selenium.getText("id=messages"));*/
-//		selenium.click("css=button.btn.btn-default");
-//		selenium.click("id=cell3");
-//		selenium.click("id=cell1");
-//		selenium.click("id=cell0");
-//		selenium.click("id=cell6");
-//		selenium.click("id=cell4");
-//		selenium.click("id=cell5");
-//		selenium.click("id=cell7");
-//		selenium.click("id=cell8");
-//		selenium.click("id=cell2");
-//		myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
-//		assertEquals("It's a draw!", selenium.getText("id=messages"));
-//		/*driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-//		assertEquals("It's a draw!", selenium.getText("id=messages"));*/
-//	}
+	@Test
+	public void testFireFoxCheckForWinnerAndDrawIT() throws Exception {
+		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=player0", "Simon");
+		selenium.type("id=player1", "Bob");
+		selenium.click("id=btn");
+		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#game-layout")));
+		selenium.click("id=cell2");
+		selenium.click("id=cell0");
+		selenium.click("id=cell1");
+		selenium.click("id=cell3");
+		selenium.click("id=cell8");
+		selenium.click("id=cell6");
+		// Wait for '.overlay' to appear
+		myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
+		assertEquals("Bob won!", selenium.getText("id=messages"));
+		selenium.click("id=btn");
+		// Wait for '#game-layout' to appear
+		myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#game-layout")));
+		selenium.click("id=cell3");
+		selenium.click("id=cell1");
+		selenium.click("id=cell0");
+		selenium.click("id=cell6");
+		selenium.click("id=cell4");
+		selenium.click("id=cell5");
+		selenium.click("id=cell7");
+		selenium.click("id=cell8");
+		selenium.click("id=cell2");
+		// Wait for '.overlay' to appear
+		myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
+		assertEquals("It's a draw!", selenium.getText("id=messages"));
+	}
 
 	
 

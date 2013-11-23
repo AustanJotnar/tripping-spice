@@ -1,72 +1,119 @@
-#################################
-# TicTacToe Development Manual #
-#################################
+Developemant Manual
 
 Follow these steps to set up our source control and build environment
 
 NOTE that it is advised to use linux as the OS in the development. Using other OS's is at your own risk.
 
-######################################################
+Git setup
 
-1. Git setup
-# If you don't have a account on github, make an account on https://github.com/
+If you don't have a account on github, make an account on github
 
-# Install git:
-sudo apt-get install git
+Install git:
+$sudo apt-get install git
 
-# Follow instructions for setup:
-http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup
+Follow instructions to setup github
+Follow instructions to generate SSH keys and set up ssh connection
 
-# Follow instructions to generate SSH keys and set up ssh connection:
-https://help.github.com/articles/generating-ssh-keys#platform-linux
+Clone github repository:
+$git clone git@github.com:AustanJotnar/tripping-spice.git.
 
-# Clone github repository:
-git clone git@github.com:AustanJotnar/tripping-spice.git
+Navigate to git folder
+$cd tripping-spice
 
-# Navigate to git folder
-cd tripping-spice
+Java and Maven Setup
 
-######################################################
+Install Java
 
-2. Java and Maven
-# To setup Java run: 
-bin/dev_setup
+To setup Java run:
+$bin/dev_setup
+To check for version run:
+$java -version
+If java version is not "1.7.0_xx", Then run:
+$sudo update-alternatives --config java
+Select option for java 1.7
 
-# Run: 
-java -version
+Install Maven
 
-# If java version is not "1.7.0_xx"
-# Then run:
-sudo update-alternatives --config java
-# Select option for java 1.7
+$ sudo apt-get installl maven
+If you encounter any problems with Maven (such as JAVA_HOME not set or similar) see Maven install instructions.
 
-# If you encounter any problems with Maven (such as JAVA_HOME not set or similar) see Maven install instructions.
-http://maven.apache.org/download.cgi
-
-######################################################
-
-3. Programming rules
+Programming rules
 
 Classes should start with a upper case letter.
-
-Variable and method names should start with lower case letters. If the name is made of more than one word they should be written with out spaces and each word starting with a upper case letter, excluding the first word of course. 
-
+Variable and method names should start with lower case letters.
+If the name is made of more than one word they should be written with out spaces and each word starting with a upper case letter, excluding the first word of course.
 Curly braces should always have their own lines.
+Inspect older code if these rules are unclear.
 
-To sum up:
+Preview of a typical code setup:
 
 public class ExampleClass
 {
-	private int numberOfThings;
-
-	public void setNumberOfThings(int number)
-	{
-		this.numberOfThings = number;
-	}
+   private int numberOfThings;
+   public void setNumberOfThings(int number)
+   {
+      this.numberOfThings = number;
+   }
 }
+Before pushing any changes to github run...
 
+This script runs all integration tests and unit tests.
 
-Before commiting any changes to github run:
-bin/doesitall
+$bin/beforepush
+The following scripts are for various development purposes.
 
-It will check for errors in code, test the webpage and check code coverage and coding rules.
+Runs all available tests, starts up a spark web service and runs IT tests on it when finished shuts down the service.
+
+$bin/beforepush 
+
+Removes the /target such as jar files and etc.
+
+$bin/clean
+
+Compiles all code under src.
+
+$bin/compile
+
+Creates /target/tmp folder and copys the target jar tile to target/tmp.
+
+$bin/deploy	
+
+Push straigt from git rep to heroku
+
+$bin/deployheroku	
+
+Install the openjdk-7-jdk, maven and purges openjdk-6-jdk.
+
+$bin/dev_setup	
+
+Installs firefox xvfb and configures settings only for greenqloud or unix with no GUI .
+
+$bin/greenqloud_xvfb_setup	
+
+Compile validate and compresses to jar package.
+
+$bin/package
+
+Starts up spark web service and runs it in the background, given "start" argument, bin/run stop, then stops the service. It uses the last created jar file. Services as a staging server.
+
+$bin/run {start|stop}
+
+Sets the local spark server as stagin server for selenum tests and runs selenium tests.
+
+$bin/selenium_test	
+
+Sets the local spark server as stagin server for selenum tests and runs selenium tests. Used for Unix whith out GUI
+
+$bin/selenium_test_xvfb	
+
+Runs selenium test and uses heroku as staging service.
+
+$bin/selenium_using_herokuapp	
+
+Only runs unint tests.
+
+$bin/unit_test	
+
+Starts xvfb for Unix with out GUI.
+
+$bin/xvfb
