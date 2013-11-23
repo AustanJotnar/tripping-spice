@@ -1,10 +1,10 @@
 #!/bin/bash
 
-bin/clean
+
+bin/devbin/clean
 bin/package
 bin/run start
-bin/unit_test
 bin/selenium_test
 bin/ccunittest
 bin/run stop
-echo "Finished running all the crap" 
+echo "Finished running all the scripts!" 
