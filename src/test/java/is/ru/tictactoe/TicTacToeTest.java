@@ -9,9 +9,10 @@ public class TicTacToeTest
     TicTacToe game = new TicTacToe(p1, p2);  
 
     @Test
-    public void testTicTacToe() 
+    public void testTicTacToeGetPlayer() 
     {
         assertEquals(0, game.getPlayer(0).getId());
+        assertEquals(1, game.getPlayer(1).getId());
     }
 
     @Test
@@ -19,6 +20,8 @@ public class TicTacToeTest
     {
     	game.switchPlayer();
     	assertEquals(1, game.getActivePlayer().getId());
+        game.switchPlayer();
+        assertEquals(0, game.getActivePlayer().getId());
     }
     @Test
     public void testCheckForWinnerNoWinner()
@@ -29,22 +32,184 @@ public class TicTacToeTest
     @Test
     public void testCheckForWinnerXWins()
     {
+        int test = 0;
+        game.gameBoard.resetBoard();
+        //..x
+        //.x.
+        //x..  
+        for(int i = 2; i < 7; i += 2)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(1, test);
+        
+        game.gameBoard.resetBoard();
+        //x..  
+        //.x. 
+        //..x   
         for(int i = 0; i < 9; i += 4)
         {
             game.gameBoard.addToBoard('X', i);
         }
-        int test = game.checkForWinner();
+        test = game.checkForWinner();
+        assertEquals(1, test);
+
+        game.gameBoard.resetBoard();
+        //xxx  
+        //... 
+        //...   
+        for(int i = 0; i < 3; i++)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(1, test);
+        
+        game.gameBoard.resetBoard();
+        //...  
+        //xxx 
+        //...  
+        for(int i = 3; i < 6; i++)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(1, test);
+
+        game.gameBoard.resetBoard();
+        //... 
+        //... 
+        //xxx  
+        for(int i = 6; i < 9; i++)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(1, test);
+
+        game.gameBoard.resetBoard();
+        //x..  
+        //x.. 
+        //x..  
+        for(int i = 0; i < 7; i += 3)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(1, test);
+
+        game.gameBoard.resetBoard();
+        //.x.  
+        //.x. 
+        //.x.  
+        for(int i = 1; i < 8; i += 3)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(1, test);
+        game.gameBoard.resetBoard();
+        //..x  
+        //..x 
+        //..x  
+        for(int i = 2; i < 9; i += 3)
+        {
+            game.gameBoard.addToBoard('X', i);
+        }
+        test = game.checkForWinner();
         assertEquals(1, test);
     }
     @Test
     public void testCheckForWinnerOWins()
     {
+        int test = 0;
         game.switchPlayer();
-        for(int i = 1; i < 9; i += 3)
+        game.gameBoard.resetBoard();
+        //..o
+        //.o.
+        //o..  
+        for(int i = 2; i < 7; i += 2)
         {
             game.gameBoard.addToBoard('O', i);
         }
-        int test = game.checkForWinner();
+        test = game.checkForWinner();
+        assertEquals(2, test);
+        
+        game.gameBoard.resetBoard();
+        //o..  
+        //.o. 
+        //..o   
+        for(int i = 0; i < 9; i += 4)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(2, test);
+
+        game.gameBoard.resetBoard();
+        //ooo  
+        //... 
+        //...   
+        for(int i = 0; i < 3; i++)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(2, test);
+        
+        game.gameBoard.resetBoard();
+        //...  
+        //ooo 
+        //...  
+        for(int i = 3; i < 6; i++)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(2, test);
+
+        game.gameBoard.resetBoard();
+        //... 
+        //... 
+        //ooo  
+        for(int i = 6; i < 9; i++)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(2, test);
+
+        game.gameBoard.resetBoard();
+        //o..  
+        //o.. 
+        //o..  
+        for(int i = 0; i < 7; i += 3)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(2, test);
+
+                game.gameBoard.resetBoard();
+        //.o.  
+        //.o. 
+        //.o.  
+        for(int i = 1; i < 8; i += 3)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
+        assertEquals(2, test);
+                game.gameBoard.resetBoard();
+        //..o  
+        //..o 
+        //..o  
+        for(int i = 2; i < 9; i += 3)
+        {
+            game.gameBoard.addToBoard('O', i);
+        }
+        test = game.checkForWinner();
         assertEquals(2, test);
     }
     @Test
