@@ -33,6 +33,27 @@ public class PlayerTest
     {
         assertEquals('X', player2.getToken());
     }
-
+    @Test
+    public void testSetId() 
+    {
+        player2.setId(1);
+        assertEquals(1, player2.getId());
+    }
+    @Test
+    public void testSetToken() 
+    {
+        player2.setToken(0);
+        assertEquals('X', player2.getToken());
+        player2.setToken(1);
+        assertEquals('O', player2.getToken());
+        player2.setToken(3);
+        assertEquals('O', player2.getToken());
+    }
+    @Test
+    public void testSetName() 
+    {
+        player2.setName("Haraldur");
+        assertEquals("Haraldur", player2.getName());
+    }
 }
 

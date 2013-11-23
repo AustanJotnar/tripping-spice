@@ -232,7 +232,6 @@ public class TicTacToeTest
         int test = game.checkForWinner();
         assertEquals(3, test);
     }
-    
     @Test
     public void testAddPlayers()
     {
@@ -242,6 +241,5 @@ public class TicTacToeTest
         assertEquals(0, p1.getId());
         assertEquals(1, p2.getId());
     }   
-
 }
 

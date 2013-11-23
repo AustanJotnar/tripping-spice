@@ -26,6 +26,10 @@ public class GameBoardTest
     public void testGameBoardEmptyCell() 
     {
         assertTrue(gb.emptyCell(8));
+        gb.addToBoard('X', 0);
+        assertFalse(gb.emptyCell(0));
+        assertFalse(gb.emptyCell(-1));
+        assertFalse(gb.emptyCell(9));
     }
 
     @Test
@@ -45,6 +49,18 @@ public class GameBoardTest
     public void testGameBoardAddToBoardXon9() 
     {
         int test = gb.addToBoard('X', 9);
+        assertEquals(-1, test);
+    }
+    @Test
+    public void testGameBoardAddToBoardXonNeg1() 
+    {
+        int test = gb.addToBoard('X', -1);
+        assertEquals(-1, test);
+    }
+    @Test
+    public void testGameBoardAddToBoardWrongToken() 
+    {
+        int test = gb.addToBoard('W', 0);
         assertEquals(-1, test);
     }
 }
