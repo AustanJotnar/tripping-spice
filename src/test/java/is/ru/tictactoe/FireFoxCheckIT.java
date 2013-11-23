@@ -22,17 +22,34 @@ public class FireFoxCheckIT {
 	}
 
 	@Test
-	public void testEverything() throws Exception {
+	public void testFireFoxTestTitleIT() throws Exception {
 		selenium.open("/");
 		selenium.waitForPageToLoad("30000");
 		assertEquals("TicTacToe", selenium.getTitle());
-		selenium.click("id=cell0");
-		assertEquals("Add players to the game!", selenium.getText("id=messages"));
-		assertEquals("Start Playing", selenium.getText("id=btn"));
+	}
+
+	@Test
+	public void testFireFoxCheckForWinnerIT() throws Exception {
+		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
 		selenium.type("id=player0", "Simon");
 		selenium.type("id=player1", "Bob");
 		selenium.click("css=button.btn.btn-default");
-		assertEquals("Restart Game", selenium.getText("id=btn"));
+		selenium.click("id=cell3");
+		selenium.click("id=cell1");
+		selenium.click("id=cell0");
+		selenium.click("id=cell4");
+		selenium.click("id=cell6");
+		assertEquals("Simon won!", selenium.getText("id=messages"));
+	}
+
+	@Test
+	public void testFireFoxCheckForWinnerAndDrawIT() throws Exception {
+		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=player0", "Simon");
+		selenium.type("id=player1", "Bob");
+		selenium.click("css=button.btn.btn-default");
 		selenium.click("id=cell2");
 		selenium.click("id=cell0");
 		selenium.click("id=cell1");
@@ -54,6 +71,8 @@ public class FireFoxCheckIT {
 		String drawmessages = "Finished\nIt's a draw!\nClick \"Restart Game\" to play again.";
 		assertEquals(drawmessages, selenium.getText("class=overlay"));
 	}
+
+	
 
 	@After
 	public void tearDown() throws Exception {
