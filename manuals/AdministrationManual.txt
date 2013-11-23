@@ -1,105 +1,119 @@
- *----------------------------------------------------------------------*
- *			TicTacToe Administration Manual			*
- *					 				*
- *----------------------------------------------------------------------*
+Administration Manual
+
+This page contains a short description of the tools and steps needed to get the project up and running on a fresh machine and how to setup setup for deployment using Heroku and Travis-CI service.
 
 Update Ubuntu
-	$ sudo apt-get install
-	$ sudo apt-get upgrade
-Create user with sudo rigths - 
-	$ useradd username -m #Creat user and a home dir
-	$ usermod -g sudo username #Change users primary group to sudo
-Create a password for user:
- 	$ sudo passwd username
-Install git
-	$ sudo apt-get install git
 
-Install mvn - {required}
-	$ sudo apt-get install maven
-Follow instructions on how to set up ssh public key:
-https://help.github.com/articles/generating-ssh-keys
+$ sudo apt-get update
+$ sudo apt-get upgrade
+Create user with sudo rights (only required if that user does not exit (Greenqloud))
+
+$ sudo useradd <username> -m 
+$ sudo usermod -g sudo <username> 
+Create a password for user
+
+$ sudo passwd <username>
+
+Install git
+
+$ sudo apt-get install git
+
+Install Maven
+
+$ sudo apt-get installl maven
+
+Verify or install Java
+
+To setup Java run:
+$bin/dev_setup
+2. To check for Java version run:
+$java -version
+3. If java version is not "1.7.0_xx", Then run:
+$sudo update-alternatives --config java
+Select option for java 1.7
 
 Fork and clone repository from github
-	Log in to GitHub.
-	Fork https://github.com/AustanJotnar/tripping-spice/
 
-	Navigate to your install directory.
+Log in to GitHub.
+Fork https://github.com/AustanJotnar/tripping-spice/
+Navigate to your install directory.
+Clone your new repository:
+$git clone git@github.com:<Your_SSH_clone_URL>
 
-	Clone your new repository:
-	git clone git@github.com:<Your_SSH_clone_URL>
- *----------------------------------------------------------------------*
- *			Heroku account and Travis-C			* 
- *	       	If you want to deploy app to heroku 			*
- *			{ Optional -Start }			 	*					 		
- *----------------------------------------------------------------------*
-Navigate to http://heroku.com and create an account.	
-Heroku toolbelt 
-	Install:
-	$ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+Deployment
 
-		Once installed, you'll have access to the heroku command from your command shell. 
-		Log in using the email address and password you used when creating your Heroku account:
-	
-	$ heroku login
-		Enter your Heroku credentials.
-		Email: adam@example.com
-		Password:
-		Could not find an existing public key.
-		Would you like to generate one? [Yn]
-		Generating new SSH public key.
-		Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
+Navigate to the root of the project
+Deploy to webserver on port 4567 (Portnumber is editable in bin/run file)
+$bin/run start
+To stop webservice run:
 
-		You're now ready to create your first Heroku app:
+$bin/run stop
 
-	$ cd ~/myapp  #Git hub forked root 
-	$ heroku create
-		Creating stark-fog-398... done, stack is cedar
-		http://stark-fog-398.herokuapp.com/ | git@heroku.com:stark-fog-398.git
-		Git remote heroku added
+Optional Heroku deployment and Travis-CI integration
 
-Install gem - {optional - Travis requirement}
-	Install ruby1.9.1-dev:
-		$ sudo apt-get update
-		$ sudo apt-get install -y make ruby1.9.1-dev
+Navigate to Heroku and create an account.
 
-Travis tool - {optional}
-	Install:
-	Use gem1.9.1 to install travis:
+Install Heroku toolbelt
 
-		$ sudo gem1.9.1 install travis
+$ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+Once installed, you'll have access to the heroku command line tool from in your shell. Log in using the email address and password you used when creating your Heroku account:
+
+$ heroku login
+    Enter your Heroku credentials.
+    Email: adam@example.com
+    Password:
+    Could not find an existing public key.
+    Would you like to generate one? [Yn]
+    Generating new SSH public key.
+    Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
+
+    You're now ready to create your first Heroku app:
+
+$ cd ~/myapp  #Git hub forked root 
+$ heroku create
+    Creating stark-fog-398... done, stack is cedar
+    http://stark-fog-398.herokuapp.com/ | git@heroku.com:stark-fog-398.git
+    Git remote heroku added
+
+Install gem
+
+Install ruby1.9.1-dev:
+
+$ sudo apt-get update
+$ sudo apt-get install -y make ruby1.9.1-dev
+
+Install Travis tool
+
+Use gem1.9.1 to install travis:
+
+$ sudo gem1.9.1 install travis
 
 Make a hook to Travis-CI on Github
-	Log in to GitHub.
-	Navigate to the new repository.
-	Navigate to Settings.
-	Navigate to Service Hooks.
-	Navigate to Travis and follow instructions on GitHub page.
 
-	You have now set up a hook to your new GitHub repository.
+Log in to GitHub.
+Navigate to the new repository.
+Navigate to Settings.
+Navigate to Service Hooks.
+Navigate to Travis and follow instructions on the GitHub page.
+You have now set up a hook to your new GitHub repository.
 
-Make changes to .travis.yml for your Heroku Apps.
+Rename travis file
 
-	First of all, you have to get your auth token from Heroku :
-	
-		$token=$(heroku auth:token)
+$mv .travis.yml .travis.yml.old
+Make changes to .travis.yml
 
-	This will store the token, and keep it for later use.
+This is so that Travis-ci can automatically pull from github and push to your heroku App. For more detailed instructions checkout this link. First of all, you have to get your auth token from Heroku :
 
-	Then, install the Travis CLI tool:
+$token=$(heroku auth:token)
+This will store the token later use.
 
-		$sudo gem install travis
+Install the Travis CLI tool:
 
-	You now have the Travis CLI tool installed. 
-	This will help you to encrypt your Heroku token.
-	
-	travis encrypt HEROKU_API_KEY=$token --add
-	
-	Running the above command will add your encrypted token to your .travis.yml.
+$sudo gem install travis
+You now have the Travis CLI tool installed which will assist you in encrypting your Heroku token.
 
-	Make changes to your .travis.yml for your heroku apps.
+Running $travis encrypt HEROKU_API_KEY=$token --add will add your encrypted token to your .travis.yml.
 
-Do some changes and push to github and it will deploy to your production server.
+Make changes to your .travis.yml for deployment your heroku apps. STAGING_SERVER is the path to your heroku app. You can open travis.yml.old and copy the missing lines from that file, such as the declaration of which language to use, jdk, startup command for Xvfb and the maven test command.
 
-*---------------------{optional - End}---------------------------------*
-
-
+Do some changes and push to Github. Travis will then run the appropriate tests and deploy to your production server depending on the outcome of the tests run.
