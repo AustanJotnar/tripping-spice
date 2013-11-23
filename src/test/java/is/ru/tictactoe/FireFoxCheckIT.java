@@ -31,7 +31,6 @@ public class FireFoxCheckIT {
 	public void testFireFoxTestWithNoPlayers() throws Exception {
 		selenium.open("/");
 		selenium.click("id=cell0");
-		Thread.sleep(1000);
 		assertEquals("Add players to the game!", selenium.getText("id=messages"));
 	}
 
