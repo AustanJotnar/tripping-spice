@@ -49,7 +49,7 @@ http://maven.apache.org/download.cgi
 
 Classes should start with a upper case letter.
 
-Variable and function names should start with lower case letters. If the name is made of more than one word they should be written with out spaces and each word starting with a upper case letter, excluding the first word of course. 
+Variable and method names should start with lower case letters. If the name is made of more than one word they should be written with out spaces and each word starting with a upper case letter, excluding the first word of course. 
 
 Curly braces should always have their own lines.
 
