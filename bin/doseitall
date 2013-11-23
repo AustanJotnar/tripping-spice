@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+## Runs test for selenium. Also reports for Code Coverage and Code Inspection.
 bin/devbin/clean
 bin/package
 bin/run start

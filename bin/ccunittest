@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## Generates a Code coverages and Code inspection reports that will be opened in firefox
 mvn clean package
 mvn site
 firefox target/site/jacoco/index.html target/site/checkstyle.html

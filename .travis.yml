@@ -18,7 +18,9 @@ before_install:
 - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
 - echo "   CheckHostIP no" >> ~/.ssh/config
 - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+# Add a new SSH key to Heroku
 - yes | heroku keys:add
+# Push to Heroku!
 - yes | git push -f heroku master
 - "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"

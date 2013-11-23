@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## Sets up java 1.7 and maven for the developer
 sudo apt-get update
 
 sudo apt-get install openjdk-7-jdk

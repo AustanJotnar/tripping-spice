@@ -1,4 +1,5 @@
 #!/bin/bash
+## Fires up a local sparks server (mainly for selenium testing)
 if [ -z "$1" ]; then
         echo "`basename $0` {start|stop}"
         exit
