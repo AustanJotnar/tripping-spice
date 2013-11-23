@@ -5,11 +5,10 @@
   <meta name="AustanJotnar.is" content="Play TicTacToe" />
   <title>TicTacToe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- current stylesheet -->
-  <link rel="stylesheet" type="text/css" href="Styles/tictacstyle.css">
   <!-- load bootstrap for nicer ui -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-
+  <!-- current stylesheet -->
+  <link rel="stylesheet" type="text/css" href="Styles/tictacstyle.css">
   <!-- load jquery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="Scripts/tictactoe.js"></script>
@@ -19,7 +18,7 @@
     <h1>Tic Tac Toe</h1>
 
     <div id="form">
-      <form method="post" action="/add" class="form-inline" role="form"> 
+      <form method="post" action="/add" role="form"> 
         <div class="form-group">
           <input type="text" class="form-control" name="player0" id="player0"
           placeholder="Player X">
@@ -30,8 +29,6 @@
         </div>
         <button type"submit" id="btn" class="btn btn-default">Start Playing</button>
       </form>
-    </div>
-    <div id="messages">
     </div>
     <div id="game-layout">
       <div id="gameboard">
@@ -54,6 +51,10 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+    <div class="messages-container">
+      <div id="messages">
       </div>
     </div>
   </div>
