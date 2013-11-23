@@ -33,7 +33,7 @@ public class FireFoxCheckForWinnerIT {
 		selenium.click("id=cell0");
 		selenium.click("id=cell4");
 		selenium.click("id=cell6");
-		//assertEquals("Simon won!", selenium.getText("id=test"));
+		assertEquals("Simon won!", selenium.getText("id=messages"));
 	}
 
 	@After
