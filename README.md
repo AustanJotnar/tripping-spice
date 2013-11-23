@@ -1,6 +1,8 @@
+#Tripping
+[![Build Status](https://travis-ci.org/AustanJotnar/tripping-spice.png)](https://travis-ci.org/AustanJotnar/tripping-spice)
 This project was created in the class Hugbúnaðarfræði(T-303-HUGB) 2013.  The project goals was
 learn to set up technical infrastructure to support agile development. 
-Travis-CI Status [![Build Status](https://travis-ci.org/AustanJotnar/tripping-spice.png)](https://travis-ci.org/AustanJotnar/tripping-spice)
+Travis-CI Status 
 
 #####Description:
 TicTacToe web game that uses continous integration and deployment design by utilizing 
