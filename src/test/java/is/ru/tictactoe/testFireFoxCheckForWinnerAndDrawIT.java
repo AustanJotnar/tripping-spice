@@ -34,6 +34,7 @@ public class testFireFoxCheckForWinnerAndDrawIT {
 		selenium.click("id=cell3");
 		selenium.click("id=cell8");
 		selenium.click("id=cell6");
+		Thread.sleep(1000);
 		String winmessages = "Finished\nBob won!\nClick \"Restart Game\" to play again.";
 		assertEquals(winmessages, selenium.getText("class=overlay"));
 		selenium.click("css=button.btn.btn-default");
