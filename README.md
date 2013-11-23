@@ -1,8 +1,7 @@
+Travis-CI Status
 [![Build Status](https://travis-ci.org/AustanJotnar/tripping-spice.png)]
 (https://travis-ci.org/AustanJotnar/tripping-spice)
-tripping-spice
+
+Manuals are on the [Wiki page](https://github.com/AustanJotnar/tripping-spice/wiki)
 
 
-==============
-https://travis-ci.org/AustanJotnar/tripping-spice
-Síðannarverkefni
