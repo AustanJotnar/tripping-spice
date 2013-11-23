@@ -34,6 +34,34 @@ public class FireFoxCheckIT {
 		assertEquals("TicTacToe", selenium.getTitle());
 	}
 
+	@Test
+	public void testFireFoxCheckForWinnerIT() throws Exception {
+		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("id=player0", "Simon");
+		selenium.type("id=player1", "Bob");
+		selenium.click("css=button.btn.btn-default");
+		selenium.click("id=cell3");
+		selenium.click("id=cell1");
+		selenium.click("id=cell0");
+		selenium.click("id=cell4");
+		selenium.click("id=cell6");
+		/*driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 4);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("overlay")));
+		assertEquals("Simon won!", element.getText());
+		/*
+		WebDriverWait wait = new WebDriverWait(driver, 2);
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("messages")));
+		assertEquals("Simon won!", element.getText());
+
+		WebDriver driver = new FirefoxDriver();
+		driver.get("http://somedomain/url_that_delays_loading");
+		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.id("myDynamicElement")));
+		*/
+		WebElement myDynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".overlay")));
+		assertEquals("Simon won!", selenium.getText("id=messages"));
+	}
 
 //	@Test
 //	public void testFireFoxCheckForWinnerAndDrawIT() throws Exception {
